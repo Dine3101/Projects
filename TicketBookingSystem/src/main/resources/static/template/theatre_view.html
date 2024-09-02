@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}">/head>"
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" th:each="theatre : ${theatres}">
+          <div class="card text-white bg-dark border-warning mb-4">
+            <div class="card-header">
+              <h3 th:text="'Theatre : '+${theatre.getName()}"></h3>
+            </div>
+            <div class="card-body">  
+              <div class="card-text">
+                <p th:text="'Owner : '+${theatre.getOwnerName()}+' | Location : '+${theatre.getLocation()}"></p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a id="getScreens" th:href="@{'/theatre/'+${theatre.getId()}+'/screen/view'}" class="d-inline">
+                      <button type="button" class="btn btn-primary">View Screens</button>
+                    </a>
+                    <form id="deleteTheatre" th:action="@{'/api/theatre/'+ ${theatre.getId()}}" onsubmit="deleteTheatre(event)" method="post" class="d-inline ml-2">
+                      <button type="submit" class="btn btn-danger" onclick="deleteTheatre(event)">Delete</button>
+                    </form>
+                  </div>  
+                </div>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="theatre/add">
+        <button type="button" class="btn btn-primary">Add Theatre</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+
+  <script>
+    function deleteTheatre(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('deleteTheatre');
+        const url = form.action;
+    
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Theatre deleted successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = 'theatre';
+            } else {
+                alert('Failed to delete theatre.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+    </script>
+  <!-- footer section -->       
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header class="header_section" th:fragment="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href=".">
+          <span>
+            Cinema
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  mx-auto ">
+            <li class="nav-item ">
+              <a class="nav-link" th:href=".">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movie.html">Movie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="theatre">Theatre </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book.html">Book Ticket</a>
+            </li>
+          </ul>
+          <div class="user_option">
+            <a href="" class="order_online">
+              Sign In
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+</body>
+
+  </html>

@@ -1,0 +1,9 @@
+To Add: update and delete ->session-seat and screen-session - before EOD 20/08 - due
+To Change: relationship b/w screen and movie - before EOD 21/08
+To Add: update and delete -> movie - before EOD 21/08
+To Add: Database - MySQL -> before EOD 23/08
+To Add: Back End Controllers -> before EOD 24/08
+To Add: Front End -> before EOD 26/08
+To Add: Models,Services and Repos-> Ticket, Audience
+To Add: RestControllers and Back End Controllers -> Ticket, Audience
+

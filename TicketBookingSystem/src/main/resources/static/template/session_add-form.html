@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}"></head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img th:src="@{/images/hero-bg.jpg}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Session Information
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form id="addSession" th:action="@{'/api/screen/'+${screenId}+'/session'}" th:object="${session}" method="post" onsubmit="addSession(event)">
+              <div>
+                <input type="text" class="form-control" placeholder="Session Name" th:field="*{sessionName}" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Start Time" th:field="*{startTime}"/>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="End Time" th:field="*{endTime}"/>
+              </div>
+              <div>
+                <input type="hidden" name="screenId" th:value="${screenId}" />
+              </div>
+              <button type="submit" class="btn btn-success" onclick="addSession(event)">ADD</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+  <script>
+    function addSession(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('addSession');
+        const url = form.action;
+        
+        const formData=new FormData(form);
+        const screenId=formData.get("screenId")
+
+        const data={};
+  
+        formData.forEach((value,key)=>{
+          data[key]=value;
+        });
+  
+  
+        fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+          body:JSON.stringify(data),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Session Added successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = `screen/${screenId}/session/view`;
+            } else {
+                alert('Failed to add session');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+  <!-- footer section -->       
+
+</body>
+
+</html>

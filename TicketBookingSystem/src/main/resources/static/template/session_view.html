@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}">/head>"
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" th:each="screenSession : ${sessions}">
+          <div class="card text-white bg-success border-dark mb-4">
+            <div class="card-header">
+              <h3 th:text="'Session : '+${screenSession.getSessionName()}"></h3>
+            </div>
+            <div class="card-body">  
+              <div class="card-text">
+                <p>
+                    <h4 th:text="'Seats : '+${screenSession.getSeatCount()}"></h4>
+                    <h4 th:text="'Price: '+${screenSession.getPrice()}"></h4>
+                    <h4 th:text="'Start Time : '+${screenSession.getStartTime()}+' | End Time : '+${screenSession.getEndTime()}"></h4>
+                </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a id="buyTicket" href="#" class="d-inline">
+                      <button type="button" class="btn btn-primary">Buy Ticket</button>
+                    </a>
+                    <form id="deleteSession" th:action="@{'/api/session/'+ ${screenSession.getId()}}" onsubmit="deleteSession(event)" method="post" class="d-inline ml-2">
+                      <input type="hidden" name="screenId" th:value="${screenId}">
+                      <button type="submit" class="btn btn-danger" onclick="deleteSession(event)">Delete</button>
+                    </form>
+                  </div>  
+                </div>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a th:href="@{'/screen/'+${screenId}+'/session/add'}">
+        <button type="button" class="btn btn-primary">Add Session</button>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    function deleteSession(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('deleteSession');
+        const url = form.action;
+        const formData=new FormData(form);
+        const screenId=formData.get("screenId")
+
+    
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Session deleted successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = `screen/${screenId}/session/view`;
+            } else {
+                alert('Failed to delete session.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+
+  <!-- footer section -->       
+
+</body>
+
+</html>
