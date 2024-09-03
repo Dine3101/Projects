@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class MovieController {
+@RequestMapping("api/")
+public class MovieRestController {
     @Autowired
     private MovieService movieService;
 
@@ -31,9 +32,9 @@ public class MovieController {
         movieService.addScreen(movieId,screenService.getScreen(screen.getId()));
     }
 
-    @DeleteMapping("movie")
-    public void deleteMovie(@RequestBody Movie movie){
-        movieService.deleteMovie(movie);
+    @DeleteMapping("movie/{movie-id}")
+    public void deleteMovie(@PathVariable("movie-id") int movieId){
+        movieService.deleteMovie(movieId);
     }
 
 }

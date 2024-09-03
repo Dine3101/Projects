@@ -21,21 +21,25 @@ public class MovieService {
         movieRepository.save(movie);
     }
 
+    public Movie getMovie(int movieId){
+        return movieRepository.findById(movieId).get();
+    }
     public List<Movie> getMovies(){
         List<Movie> movies=movieRepository.findAll();
         return movies;
-    }
-
-    public Movie movie(int movieId){
-        return movieRepository.findById(movieId).get();
     }
 
     public void deleteMovie(Movie movie){
         movieRepository.delete(movie);
     }
 
+    public void deleteMovie(int movieId){
+        Movie movie=getMovie(movieId);
+        deleteMovie(movie);
+    }
+
     public void addScreen(int movieId, Screen screen){
-        Movie movie=movieRepository.findById(movieId).get();
+        Movie movie=getMovie(movieId);
         if(movie==null) return;
         screen.setMovie(movie);
         movie.getScreens().add(screen);

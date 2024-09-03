@@ -13,6 +13,7 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
+@Component
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +21,6 @@ public class Movie {
     private String name;
     private String language;
     @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL)
-    @JsonBackReference(value="screen-movie")
+    @JsonManagedReference(value="screen-movie")
     private List<Screen> screens;
 }
