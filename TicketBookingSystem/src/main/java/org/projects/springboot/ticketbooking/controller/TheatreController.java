@@ -73,9 +73,11 @@ public class TheatreController {
     public ModelAndView getScreenSessionList(@PathVariable("screen-id") int screenId) {
         List<Session> sessions = screenService.getSessions(screenId);
         Screen screen=screenService.getScreen(screenId);
+        Theatre theatre=screen.getTheatre();
         ModelAndView mv = new ModelAndView("session_view");
         mv.addObject("screenId", screenId);
         mv.addObject("screen",screen);
+        mv.addObject("theatre",theatre);
         mv.addObject("sessions", sessions);
         return mv;
     }
