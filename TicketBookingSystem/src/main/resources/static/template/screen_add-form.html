@@ -18,7 +18,7 @@
 
   <section class="book_section layout_padding">
     <div class="container">
-      <div class="heading_container">
+      <div class="heading_container text-white">
         <h2>
           Screen Information
         </h2>
@@ -28,15 +28,15 @@
           <div class="form_container">
             <form id="addScreen" th:action="@{'/api/theatre/'+${theatreId}+'/screen'}" th:object="${screen}" method="post" onsubmit="addScreen(event)">
               <div>
-                <label for="inputScreenName">Enter Screen Name:</label>
+                <label for="inputScreenName" style="color : white;">Enter Screen Name:</label>
                 <input id="inputScreenName" type="text" class="form-control" placeholder="Screen Name" th:field="*{screenName}" />
               </div>
               <div>
-                <label for="inputSeatCount">Enter Seat Count:</label>
+                <label for="inputSeatCount" style="color : white;">Enter Seat Count:</label>
                 <input id="inputSeatCount" type="number" class="form-control" placeholder="Seat Count" th:field="*{seatCount}"/>
               </div>
               <div>
-                <label for="inputPrice">Enter Price for each Seat:</label>
+                <label for="inputPrice" style="color : white;">Enter Price per Seat:</label>
                 <input id="inputPrice" type="number" class="form-control" placeholder="Price" th:field="*{price}"/>
               </div>
               <div>

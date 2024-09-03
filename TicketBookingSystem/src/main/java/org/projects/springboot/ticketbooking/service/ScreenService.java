@@ -49,7 +49,8 @@ public class ScreenService {
         if(screen==null) return;
         sessionService.addSession(session);
         session.setScreen(screen);
-        session.setSeatCount(screen.getSeatCount());
+        session.setTotalSeatCount(screen.getSeatCount());
+        session.setAvailableSeatCount(screen.getSeatCount());
         session.setPrice(screen.getPrice());
         saveScreen(screen);
     }

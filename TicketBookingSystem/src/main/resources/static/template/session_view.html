@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:insert="~{fragments/head::head}">/head>"
+<head th:insert="~{fragments/head::head}"></head>
 <body class="sub_page">
 
   <div class="hero_area">
@@ -24,8 +24,9 @@
             <div class="card-body">  
               <div class="card-text">
                 <p>
-                    <h4 th:text="'Seats : '+${screenSession.getSeatCount()}"></h4>
-                    <h4 th:text="'Price: '+${screenSession.getPrice()}"></h4>
+                    <h4 th:text="'Total Seats : '+${screenSession.getTotalSeatCount()}"></h4>
+                    <h4 th:text="'Available Seats : '+${screenSession.getAvailableSeatCount()}"></h4>
+                    <h4 th:text="'Price Per Seat: '+${screenSession.getPrice()}"></h4>
                     <h4 th:text="'Start Time : '+${screenSession.getStartTime()}+' | End Time : '+${screenSession.getEndTime()}"></h4>
                 </p>
                 <div class="row">

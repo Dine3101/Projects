@@ -18,7 +18,8 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String sessionName;
-    private int seatCount;
+    private int totalSeatCount;
+    private int availableSeatCount;
     private long price;
     private String startTime;
     private String endTime;

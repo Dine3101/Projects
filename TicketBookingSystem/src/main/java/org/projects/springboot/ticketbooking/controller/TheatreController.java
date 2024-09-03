@@ -53,8 +53,10 @@ public class TheatreController {
     @RequestMapping("theatre/{theatre-id}/screen/view")
     public ModelAndView getTheatreScreenList(@PathVariable("theatre-id") int theatreId) {
         List<Screen> screens = theatreService.getScreens(theatreId);
+        Theatre theatre=theatreService.getTheatre(theatreId);
         ModelAndView mv = new ModelAndView("screen_view");
         mv.addObject("screens", screens);
+        mv.addObject("theatre",theatre);
         mv.addObject("theatreId", theatreId);
         return mv;
     }
@@ -70,8 +72,10 @@ public class TheatreController {
     @RequestMapping("screen/{screen-id}/session/view")
     public ModelAndView getScreenSessionList(@PathVariable("screen-id") int screenId) {
         List<Session> sessions = screenService.getSessions(screenId);
+        Screen screen=screenService.getScreen(screenId);
         ModelAndView mv = new ModelAndView("session_view");
         mv.addObject("screenId", screenId);
+        mv.addObject("screen",screen);
         mv.addObject("sessions", sessions);
         return mv;
     }
