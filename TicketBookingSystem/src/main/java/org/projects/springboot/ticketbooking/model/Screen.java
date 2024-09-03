@@ -28,6 +28,6 @@ public class Screen {
     @JsonManagedReference(value="screen-session")
     private List<Session> sessions;
     @ManyToOne
-    @JsonBackReference(value="movie-screen")
+    @JsonManagedReference(value="screen-movie")
     private Movie movie;
 }

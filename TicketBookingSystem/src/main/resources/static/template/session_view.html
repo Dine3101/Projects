@@ -23,9 +23,7 @@
           <p>
             <h4 th:text="'Location :'+${theatre.getLocation()}"></h4><br/>
             <h4 th:text="'Owner : '+${theatre.getOwnerName}"></h4><br/>
-            <a th:href="@{'theatre/'+${theatre.getId()}+'/screen/view'}">
-              <button type="button" class="btn btn-info">View Screens</button>
-            </a>
+            
           </p>
         </div>
       <div class="row">
@@ -60,6 +58,9 @@
       </div>
       <a th:href="@{'/screen/'+${screenId}+'/session/add'}">
         <button type="button" class="btn btn-primary">Add Session</button>
+      </a>
+      <a th:href="@{'theatre/'+${theatre.getId()}+'/screen/view'}">
+        <button type="button" class="btn btn-info">View Screens</button>
       </a>
     </div>
   </section>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}"></head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img th:src="@{/images/hero-bg.jpg}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container text-white">
+        <h2>
+          Movie Information
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form id="addTheatre" action="api/movie" th:object="${movie}" method="post" onsubmit="addMovie(event)">
+              <div>
+                <input type="text" class="form-control" placeholder="Movie Name" th:field="*{name}" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Language" th:field="*{language}"/>
+              </div>
+              <button type="submit" class="btn btn-success" onclick="addMovie(event)">ADD</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+  <script>
+    function addMovie(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('addMovie');
+        const url = form.action;
+  
+        const formData=new FormData(form);
+        const data={};
+  
+        formData.forEach((value,key)=>{
+          data[key]=value;
+        });
+  
+  
+        fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+          body:JSON.stringify(data),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Movie Added successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = 'movie';
+            } else {
+                alert('Failed to add Movie.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+  <!-- footer section -->       
+
+</body>
+
+</html>

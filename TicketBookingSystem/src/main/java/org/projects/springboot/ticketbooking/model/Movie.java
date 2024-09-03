@@ -18,12 +18,8 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-//    private List<String> actorsList;
-//    private List<String> languagesList;
-//    private String director;
-//    private String producer;
-//    private String releaseDate;
+    private String language;
     @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL)
-    @JsonManagedReference(value="movie-screen")
+    @JsonBackReference(value="screen-movie")
     private List<Screen> screens;
 }
