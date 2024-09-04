@@ -34,6 +34,9 @@ public class TheatreService {
         return theatreRepository.findById(theatreId).get();
     }
 
+    public Theatre getTheatre(String name){
+        return theatreRepository.findByName(name);
+    }
     @Transactional
     public void deleteTheatre(Theatre inTheatre){
         Theatre theatre=getTheatre(inTheatre.getId());
