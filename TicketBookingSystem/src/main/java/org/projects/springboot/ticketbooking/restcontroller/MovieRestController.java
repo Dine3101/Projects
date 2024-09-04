@@ -37,4 +37,10 @@ public class MovieRestController {
         movieService.deleteMovie(movieId);
     }
 
+    @DeleteMapping("movie/{movie-id}/screen")
+    public void deleteMovie(@PathVariable("movie-id") int movieId,@RequestBody Screen inScreen){
+        Screen screen=screenService.getScreen(inScreen.getId());
+        movieService.deleteScreen(movieId,screen);
+    }
+
 }

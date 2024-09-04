@@ -20,7 +20,7 @@ public class Movie {
     private int id;
     private String name;
     private String language;
-    @OneToMany(mappedBy = "movie",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "movie")
     @JsonManagedReference(value="screen-movie")
     private List<Screen> screens;
 }

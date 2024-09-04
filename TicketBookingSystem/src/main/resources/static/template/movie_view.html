@@ -27,18 +27,18 @@
                 <p th:text="'Language : '+${movie.getLanguage()}"></p>
                 <div class="row">
                   <div class="col-md-12">
-                    <!--Audience-->
-                    <a id="getScreens" th:href="@{'/movie/'+${movie.getId()}+'/screen/view'}" class="d-inline">
+                    <!--Admin Audience-->
+                    <a id="getScreens" th:href="@{'/movie/'+${movie.getId()}+'/screen/view'}" class="d-inline mr-2">
                       <button type="button" class="btn btn-primary">Buy Ticket</button>
                     </a>
-                    <!--Admin-->
-                    <form id="deleteMovie" th:action="@{'/api/movie/'+ ${movie.getId()}}" onsubmit="deleteMovie(event)" method="post" class="d-inline ml-2">
-                      <button type="submit" class="btn btn-danger" onclick="deleteMovie(event)">Delete</button>
-                    </form>
                     <!--Admin TheatreOwner-->
-                    <a href="movie/add/screen"> 
+                    <a th:href="@{'movie/'+${movie.getId()}+'/add/screen'}" class="d-inline mr-2">
                         <button type="button" class="btn btn-primary">Buy Movie</button>
-                      </a>
+                    </a>
+                    <!--Admin-->
+                    <form id="deleteMovie" th:action="@{'/api/movie/'+ ${movie.getId()}}" onsubmit="deleteMovie(event)" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger" onclick="deleteMovie(event)">Delete</button>
+                      </form>
                   </div>  
                 </div>              
               </div>
