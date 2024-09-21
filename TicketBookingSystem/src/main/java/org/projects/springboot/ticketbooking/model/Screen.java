@@ -21,7 +21,7 @@ public class Screen {
     private String screenName;
     private int seatCount;
     private long price;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference
     private Theatre theatre;
     @OneToMany(mappedBy="screen",cascade = CascadeType.ALL)

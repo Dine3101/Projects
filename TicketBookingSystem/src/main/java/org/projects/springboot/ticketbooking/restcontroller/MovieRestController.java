@@ -29,7 +29,7 @@ public class MovieRestController {
 
     @PostMapping("movie/{movie-id}/screen")
     public void postScreen(@PathVariable("movie-id") int movieId, @RequestBody Screen screen){
-        movieService.addScreen(movieId,screenService.getScreen(screen.getId()));
+        movieService.addScreen(movieId,screen.getId());
     }
 
     @DeleteMapping("movie/{movie-id}")

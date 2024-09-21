@@ -42,7 +42,8 @@ public class MovieService {
     }
 
     @Transactional
-    public void addScreen(int movieId, Screen screen){
+    public void addScreen(int movieId, int screenId){
+        Screen screen=screenService.getScreen(screenId);
         Movie movie=getMovie(movieId);
         if(movie==null) return;
         movie.getScreens().add(screen);
