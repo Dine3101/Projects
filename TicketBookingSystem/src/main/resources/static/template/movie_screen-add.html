@@ -32,7 +32,6 @@
                 <p th:text="'Seats : '+${screen.getSeatCount()}+' | Price : '+${screen.getPrice()}"></p>
                 <div class="row">
                   <div class="col-md-12">
-                    <!--need to add this-->
                     <a th:href="@{'/movie/'+${movieId}+'/screen/add?screen_id='+${screen.getId()}}" class="d-inline">
                       <button type="button" class="btn btn-primary">Select</button>
                     </a>
