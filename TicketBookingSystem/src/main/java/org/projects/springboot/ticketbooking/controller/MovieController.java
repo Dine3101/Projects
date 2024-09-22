@@ -63,9 +63,9 @@ public class MovieController {
     }
 
     @RequestMapping("movie/{movie-id}/screen/add")
-    public String addScreen(@PathVariable("movie-id") int movieId,@RequestParam("screen_id") int screenId){
+    public String addScreen(@PathVariable("movie-id") int movieId,@RequestParam("screenId") int screenId){
         movieService.addScreen(movieId,screenId);
-        return "redirect:movie";
+        return "redirect:/movie";
     }
 
     @RequestMapping("movie/{movie-id}/screen/view")

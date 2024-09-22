@@ -26,15 +26,21 @@
           <div class="card text-white bg-info border-warning mb-4">
             <div class="card-header">
               <h3 th:text="'Screen : '+${screen.getScreenName()}"></h3>
+              <h3 th:text="'Theatre : '+${screen.getTheatre.getName()}"></h3>
+              <h3 th:text="'Movie : '+${screen.getMovie.getName()}"></h3>
             </div>
             <div class="card-body">  
               <div class="card-text">
                 <p th:text="'Seats : '+${screen.getSeatCount()}+' | Price : '+${screen.getPrice()}"></p>
                 <div class="row">
                   <div class="col-md-12">
-                    <a th:href="@{'/movie/'+${movieId}+'/screen/add?screen_id='+${screen.getId()}}" class="d-inline">
+                    <!--a th:href="@{'/movie/'+${movieId}+'/screen/add?screen_id='+${screen.getId()}}" class="d-inline">
                       <button type="button" class="btn btn-primary">Select</button>
-                    </a>
+                    </a-->
+                    <form th:action="@{'/movie/'+${movieId}+'/screen/add'}" method="post" class="d-inline">
+                      <input type="hidden" name="screenId" th:value="${screen.getId()}">
+                      <button type="submit" class="btn btn-primary">Select</button>
+                    </form>
                   </div>  
                 </div>              
               </div>

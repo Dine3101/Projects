@@ -6,6 +6,7 @@ import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Theatre;
 import org.projects.springboot.ticketbooking.repository.TheatreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,10 @@ public class TheatreService {
 
     @Autowired
     private ScreenService screenService;
+
+    @Autowired
+    @Qualifier("sampleTheatre")
+    private Theatre sampleTheatre;
     public void addTheatre(Theatre theatre){
         theatre.setScreens(new LinkedList<>());
         theatreRepository.save(theatre);
@@ -56,6 +61,9 @@ public class TheatreService {
         return theatreRepository.findAll();
     }
 
+    public void initSample(){
+        saveTheatre(sampleTheatre);
+    }
     @Transactional
     public void addScreen(int theatreId,Screen screen){
         Theatre theatre=getTheatre(theatreId);

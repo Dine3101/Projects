@@ -23,8 +23,13 @@ public class MovieService {
     @Qualifier("sampleMovie")
     private Movie sampleMovie;
 
+    @Autowired
+    @Qualifier("sampleMovieDisplay")
+    private Movie sampleMovieDisplay;
+
     public void initSample(){
-        movieRepository.save(sampleMovie);
+        saveMovie(sampleMovie);
+        saveMovie(sampleMovieDisplay);
     }
     public void saveMovie(Movie movie){
         movieRepository.save(movie);
@@ -72,7 +77,7 @@ public class MovieService {
         Movie movie=getMovie(movieId);
         if(movie==null) return;
         movie.getScreens().remove(screen);
-        screen.setMovie(null);
+        screen.setMovie(sampleMovie);
         screenService.saveScreen(screen);
         saveMovie(movie);
     }
@@ -85,7 +90,7 @@ public class MovieService {
         while(itr.hasNext()){
             Screen screen=itr.next();
             itr.remove();
-            screen.setMovie(null);
+            screen.setMovie(sampleMovie);
             screenService.saveScreen(screen);
         }
         saveMovie(movie);
