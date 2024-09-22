@@ -5,6 +5,7 @@ import org.projects.springboot.ticketbooking.model.Movie;
 import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -18,21 +19,34 @@ public class MovieService {
     @Autowired
     private ScreenService screenService;
 
-    public void addMovie(Movie movie){
-        movie.setScreens(new LinkedList<>());
+    @Autowired
+    @Qualifier("sampleMovie")
+    private Movie sampleMovie;
+
+    public void initSample(){
+        movieRepository.save(sampleMovie);
+    }
+    public void saveMovie(Movie movie){
         movieRepository.save(movie);
     }
-
     public Movie getMovie(int movieId){
         return movieRepository.findById(movieId).get();
     }
+
     public List<Movie> getMovies(){
         List<Movie> movies=movieRepository.findAll();
         return movies;
     }
-
     public void deleteMovie(Movie movie){
         movieRepository.delete(movie);
+    }
+    public Movie getSample(){
+        return getMovie(1);
+    }
+
+    public void addMovie(Movie movie){
+        movie.setScreens(new LinkedList<>());
+        saveMovie(movie);
     }
 
     public void deleteMovie(int movieId){
@@ -49,7 +63,7 @@ public class MovieService {
         movie.getScreens().add(screen);
         screen.setMovie(movie);
         screenService.saveScreen(screen);
-        movieRepository.save(movie);
+        saveMovie(movie);
     }
 
 
@@ -60,7 +74,7 @@ public class MovieService {
         movie.getScreens().remove(screen);
         screen.setMovie(null);
         screenService.saveScreen(screen);
-        movieRepository.save(movie);
+        saveMovie(movie);
     }
 
     @Transactional
@@ -74,6 +88,6 @@ public class MovieService {
             screen.setMovie(null);
             screenService.saveScreen(screen);
         }
-        movieRepository.save(movie);
+        saveMovie(movie);
     }
 }

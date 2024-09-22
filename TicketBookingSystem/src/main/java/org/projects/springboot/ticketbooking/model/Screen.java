@@ -27,7 +27,7 @@ public class Screen {
     @OneToMany(mappedBy="screen",cascade = CascadeType.ALL)
     @JsonManagedReference(value="screen-session")
     private List<Session> sessions;
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     @JsonBackReference(value="screen-movie")
     private Movie movie;
 }

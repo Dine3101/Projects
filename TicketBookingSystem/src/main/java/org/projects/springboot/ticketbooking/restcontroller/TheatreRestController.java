@@ -17,6 +17,9 @@ public class TheatreRestController {
     private ScreenService screenService;
 
     @Autowired
+    private MovieService movieService;
+
+    @Autowired
     private SessionService sessionService;
 
     @PostMapping("theatre")
@@ -26,6 +29,7 @@ public class TheatreRestController {
 
     @PostMapping("theatre/{theatre-id}/screen")
     public void postTheatre(@PathVariable("theatre-id") int theatreId, @RequestBody Screen screen){
+        screen.setMovie(movieService.getSample());
         Screen newScreen=screenService.saveScreen(screen);
         theatreService.addScreen(theatreId,newScreen);
     }

@@ -24,15 +24,16 @@
             </div>
             <div class="card-body">  
               <div class="card-text">
-                <p th:text="'Seats : '+${screen.getSeatCount()}+' | Price : '+${screen.getPrice()}"></p>
                 <h3 th:text="'Theatre : '+${screen.getTheatre.getName()}"></h3>
+                <h3 th:text="'Movie : '+${screen.getMovie.getName()}"></h3>
+                <p th:text="'Seats : '+${screen.getSeatCount()}+' | Price : '+${screen.getPrice()}"></p>
                 <div class="row">
                   <div class="col-md-12">
                     <a id="getSessions" th:href="@{'/screen/'+${screen.getId()}+'/session/view'}" class="d-inline">
                       <button type="button" class="btn btn-primary">View Sessions</button>
                     </a>
                     <form id="deleteScreen" th:action="@{'/api/screen/'+ ${screen.getId()}}" onsubmit="deleteScreen(event)" method="post" class="d-inline ml-2">
-                      <input type="hidden" name="theatreId" th:value="${theatreId}">
+                      <input type="hidden" name="theatreId" th:value="${screen.getTheatre.getId()}">
                       <button type="submit" class="btn btn-danger" onclick="deleteScreen(event)">Delete</button>
                     </form>
                   </div>  

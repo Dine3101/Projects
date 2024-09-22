@@ -56,7 +56,6 @@ public class TheatreController {
         Theatre theatre=theatreService.getTheatre(theatreId);
         ModelAndView mv = new ModelAndView("screen_view");
         mv.addObject("screens", screens);
-        mv.addObject("theatre",theatre);
         mv.addObject("theatreId", theatreId);
         return mv;
     }

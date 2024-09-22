@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class MovieController {
@@ -31,7 +32,7 @@ public class MovieController {
     @RequestMapping("movie")
     public ModelAndView getMovies(){
         ModelAndView mv=new ModelAndView("movie_view");
-        List<Movie> movies=movieService.getMovies();
+        List<Movie> movies=movieService.getMovies().stream().filter(movie->movie.getId()!=1).collect(Collectors.toList());
         mv.addObject("movies",movies);
         return mv;
     }

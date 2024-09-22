@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.repository.ScreenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -23,7 +24,6 @@ public class ScreenService {
     }
 
     public Screen saveScreen(Screen screen){
-
         Screen resScreen=screenRepository.save(screen);
         return resScreen;
     }
