@@ -76,7 +76,6 @@ public class TheatreController {
         ModelAndView mv = new ModelAndView("session_view");
         mv.addObject("screenId", screenId);
         mv.addObject("screen",screen);
-        mv.addObject("theatre",theatre);
         mv.addObject("sessions", sessions);
         return mv;
     }

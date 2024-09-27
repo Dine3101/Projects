@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}"></head>
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+
+  <section class="book_section layout_padding">
+    <div class="container">      
+      <div class="row">
+        <div class="col-md-6" th:each="screen : ${screens}">
+          <div class="card text-white bg-info border-warning mb-4">
+            <div class="card-header">
+              <h3 th:text="'Screen : '+${screen.getScreenName()}"></h3>
+            </div>
+            <div class="card-body">  
+              <div class="card-text">
+                <h3 th:text="'Theatre : '+${screen.getTheatre.getName()}"></h3>
+                <h3 th:text="'Movie : '+${screen.getMovie.getName()}"></h3>
+                <p th:text="'Seats : '+${screen.getSeatCount()}+' | Price : '+${screen.getPrice()}"></p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a id="getSessions" th:href="@{'/screen/'+${screen.getId()}+'/session/view'}" class="d-inline">
+                      <button type="button" class="btn btn-primary">View Sessions</button>
+                    </a>
+                  </div>  
+                </div>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function deleteScreen(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('deleteScreen');
+        const url = form.action;
+        const formData=new FormData(form);
+        const theatreId=formData.get("theatreId")
+
+    
+        fetch(url, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Screen deleted successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = `theatre/${theatreId}/screen/view`;
+            } else {
+                alert('Failed to delete screen.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+
+  <!-- footer section -->       
+
+</body>
+
+</html>

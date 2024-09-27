@@ -44,7 +44,7 @@ public class MovieController {
         return mv;
     }
 
-    @RequestMapping("movie/{movie-id}/buyticket")
+    @RequestMapping("movie/{movie-id}/theatre/add")
     public ModelAndView getTheatreForm(@PathVariable("movie-id") int movieId){
         ModelAndView mv=new ModelAndView("movie_theatre-form");
         mv.addObject("movieId",movieId);
@@ -65,12 +65,16 @@ public class MovieController {
     @RequestMapping("movie/{movie-id}/screen/add")
     public String addScreen(@PathVariable("movie-id") int movieId,@RequestParam("screenId") int screenId){
         movieService.addScreen(movieId,screenId);
-        return "redirect:/movie";
+        return "redirect:/movie/"+movieId+"/screen/view";
     }
 
     @RequestMapping("movie/{movie-id}/screen/view")
     public ModelAndView getScreen(@PathVariable("movie-id") int movieId){
-        ModelAndView mv=new ModelAndView("");
+        ModelAndView mv=new ModelAndView("movie_screen-view");
+        List<Screen> screens=movieService.getMovie(movieId).getScreens();
+        mv.addObject("screens",screens);
         return mv;
     }
+
+
 }

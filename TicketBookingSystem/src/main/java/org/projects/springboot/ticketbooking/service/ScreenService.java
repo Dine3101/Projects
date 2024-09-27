@@ -17,7 +17,9 @@ public class ScreenService {
 
     @Autowired
     private SessionService sessionService;
-
+    @Autowired
+    @Qualifier("sampleScreen")
+    private Screen sampleScreen;
     public void addScreen(Screen screen){
         screen.setSessions(new LinkedList<>());
         screenRepository.save(screen);
@@ -28,6 +30,14 @@ public class ScreenService {
         return resScreen;
     }
 
+
+    public void initSample(){
+        addScreen(sampleScreen);
+    }
+
+    public Screen getSampleScreen(){
+        return getScreen(1);
+    }
     public List<Screen> getScreens(){
 
         List<Screen> screens = screenRepository.findAll();

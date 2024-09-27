@@ -1,6 +1,7 @@
 package org.projects.springboot.ticketbooking.configuration;
 
 import org.projects.springboot.ticketbooking.model.Movie;
+import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Theatre;
 import org.projects.springboot.ticketbooking.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,15 @@ public class ModelConfiguration {
         theatre.setName("Sample Theatre");
         theatre.setScreens(new LinkedList<>());
         return theatre;
+    }
+
+    @Bean
+    public Screen sampleScreen(){
+        Screen screen=new Screen();
+        screen.setId(1);
+        screen.setScreenName("Sample Screen");
+        screen.setSeatCount(20);
+        screen.setPrice(20);
+        return screen;
     }
 }

@@ -1,5 +1,4 @@
-Feat: Buy movie and add to screen for a theatre
-Feat: Show movies on a theatre screen
+Feat: Show screens for a movie
 Feat: Create Model -> Ticket
 Feat: Buy ticket and create Ticket object
 Feat: Create Models -> viewers, theatreOwner, admin and movieDistributors

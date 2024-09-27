@@ -24,7 +24,7 @@ public class Theatre {
     private String name;
     private String location;
     private String ownerName;
-    @OneToMany(mappedBy="theatre",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="theatre",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Screen> screens=new LinkedList<>();
 }

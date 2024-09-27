@@ -1,6 +1,7 @@
 package org.projects.springboot.ticketbooking.configuration;
 
 import org.projects.springboot.ticketbooking.service.MovieService;
+import org.projects.springboot.ticketbooking.service.ScreenService;
 import org.projects.springboot.ticketbooking.service.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,8 +16,13 @@ public class StartRunner implements CommandLineRunner {
     @Autowired
     private TheatreService theatreService;
 
+    @Autowired
+    private ScreenService screenService;
+
     public void run(String[] args){
+        screenService.initSample();
         theatreService.initSample();
         movieService.initSample();
+        movieService.addScreen(1,1);
     }
 }

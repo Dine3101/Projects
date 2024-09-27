@@ -15,17 +15,6 @@
 
   <section class="book_section layout_padding">
     <div class="container">
-      <div class="panel panel-primary text-white">
-        <div class="panel-heading">
-          <h3 th:text="'Theatre : '+${theatre.getName()}"></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            <h4 th:text="'Location :'+${theatre.getLocation()}"></h4><br/>
-            <h4 th:text="'Owner : '+${theatre.getOwnerName}"></h4><br/>
-            
-          </p>
-        </div>
       <div class="row">
         <div class="col-md-6" th:each="screenSession : ${sessions}">
           <div class="card text-white bg-success border-dark mb-4">
@@ -59,7 +48,7 @@
       <a th:href="@{'/screen/'+${screenId}+'/session/add'}">
         <button type="button" class="btn btn-primary">Add Session</button>
       </a>
-      <a th:href="@{'theatre/'+${theatre.getId()}+'/screen/view'}">
+      <a th:href="@{'theatre/'+${screen.getTheatre().getId()}+'/screen/view'}">
         <button type="button" class="btn btn-info">View Screens</button>
       </a>
     </div>
