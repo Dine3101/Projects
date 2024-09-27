@@ -32,8 +32,7 @@ public class TheatreService {
     private Theatre sampleTheatre;
     public void addTheatre(Theatre theatre){
         theatre.setScreens(new LinkedList<>());
-        theatre=theatreRepository.save(theatre);
-        addSampleScreen(theatre.getId());
+        theatreRepository.save(theatre);
     }
 
     public Theatre getTheatre(int theatreId){
@@ -81,6 +80,12 @@ public class TheatreService {
         screen.setTheatre(theatre);
         theatre.getScreens().add(screen);
         saveTheatre(theatre);
+    }
+
+    @Transactional
+    public void addScreen(int theatreId,int screenId){
+        Screen screen=screenService.getScreen(screenId);
+        addScreen(theatreId,screen);
     }
 
     @Transactional

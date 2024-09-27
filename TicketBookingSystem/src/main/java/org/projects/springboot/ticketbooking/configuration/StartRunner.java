@@ -22,6 +22,7 @@ public class StartRunner implements CommandLineRunner {
     public void run(String[] args){
         screenService.initSample();
         theatreService.initSample();
+        theatreService.addScreen(1,1);
         movieService.initSample();
         movieService.addScreen(1,1);
     }
