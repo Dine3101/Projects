@@ -3,6 +3,7 @@ package org.projects.springboot.ticketbooking.service;
 import jakarta.transaction.Transactional;
 import org.projects.springboot.ticketbooking.model.Movie;
 import org.projects.springboot.ticketbooking.model.Screen;
+import org.projects.springboot.ticketbooking.model.Ticket;
 import org.projects.springboot.ticketbooking.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -94,5 +95,15 @@ public class MovieService {
             screenService.saveScreen(screen);
         }
         saveMovie(movie);
+    }
+
+    public Ticket getTicket(int movieId,Ticket ticket){
+        Movie movie=getMovie(movieId);
+        StringBuilder movieInfoBuilder=new StringBuilder();
+        movieInfoBuilder.append("Movie : "+movie.getName()+"\n");
+        movieInfoBuilder.append("Language : "+movie.getLanguage()+"\n");
+        String movieInfo=movieInfoBuilder.toString();
+        ticket.setMovieInfo(movieInfo);
+        return ticket;
     }
 }

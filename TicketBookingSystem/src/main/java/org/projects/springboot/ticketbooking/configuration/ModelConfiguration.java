@@ -45,6 +45,8 @@ public class ModelConfiguration {
         screen.setScreenName("Sample Screen");
         screen.setSeatCount(20);
         screen.setPrice(20);
+        screen.setRows(5);
+        screen.setCols(5);
         return screen;
     }
 }

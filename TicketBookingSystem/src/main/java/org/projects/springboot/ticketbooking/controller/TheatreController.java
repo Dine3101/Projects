@@ -7,6 +7,7 @@ import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Session;
 import org.projects.springboot.ticketbooking.model.Theatre;
 import org.projects.springboot.ticketbooking.service.ScreenService;
+import org.projects.springboot.ticketbooking.service.SessionService;
 import org.projects.springboot.ticketbooking.service.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class TheatreController {
 
     @Autowired
     ScreenService screenService;
+
+    @Autowired
+    SessionService sessionService;
 
     @Autowired
     private Theatre theatre;
@@ -86,5 +90,15 @@ public class TheatreController {
         mv.addObject("session",session);
         mv.addObject("screenId",screenId);
         return mv;
+    }
+
+    @RequestMapping("session/{session-id}/movie/buy")
+    public String addSessionToMovie(@PathVariable("session-id") int sessionId){
+        Session session=sessionService.getSession(sessionId);
+        System.out.println(session.getSessionName());
+        System.out.println(session.getScreen().getScreenName());
+        System.out.println(session.getScreen().getTheatre().getName());
+        System.out.println(session.getScreen().getMovie().getName());
+        return "";
     }
 }

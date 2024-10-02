@@ -1,6 +1,9 @@
 package org.projects.springboot.ticketbooking.service;
 
+import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Session;
+import org.projects.springboot.ticketbooking.model.Theatre;
+import org.projects.springboot.ticketbooking.model.Ticket;
 import org.projects.springboot.ticketbooking.repository.SessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,6 +14,9 @@ import java.util.List;
 public class SessionService {
     @Autowired
     private SessionRepository sessionRepository;
+
+    @Autowired
+    private TicketService ticketService;
 
     public void addSession(Session session){
         sessionRepository.save(session);
@@ -45,6 +51,25 @@ public class SessionService {
     }
     public void dropSession(int sessionId){
         dropSession(getSession(sessionId));
+    }
+
+    public Ticket getTicket(int sessionId,Ticket ticket){
+        Session session=getSession(sessionId);
+        if(session.getAvailableSeatCount()==0) return null;
+        int soldSeatCount=session.getTotalSeatCount()-session.getAvailableSeatCount();
+        int seatId=soldSeatCount+1;
+        int rows=session.getRows();
+        int cols=session.getCols();
+        String seat=('a'+(seatId/cols))+""+(seatId%cols);
+        StringBuilder sessionInfoBuilder=new StringBuilder();
+        sessionInfoBuilder.append("Session : "+session.getSessionName()+"\n");
+        sessionInfoBuilder.append("Start Time : "+session.getStartTime()+"\n");
+        sessionInfoBuilder.append("End Time : "+session.getEndTime()+"\n");
+        sessionInfoBuilder.append("Price : "+session.getPrice()+"\n");
+        sessionInfoBuilder.append("Seat Id : "+seat+"\n");
+        String sessionInfo=sessionInfoBuilder.toString();
+        ticket.setSessionInfo(sessionInfo);
+        return ticket;
     }
 
 

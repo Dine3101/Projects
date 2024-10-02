@@ -57,6 +57,8 @@ public class ScreenService {
         session.setTotalSeatCount(screen.getSeatCount());
         session.setAvailableSeatCount(screen.getSeatCount());
         session.setPrice(screen.getPrice());
+        session.setRows(screen.getRows());
+        session.setCols(screen.getCols());
         saveScreen(screen);
     }
 
@@ -112,6 +114,15 @@ public class ScreenService {
             screen.setTheatre(null);
             screenRepository.delete(screen);
         }
+    }
+
+    public Ticket getTicket(int screenId,Ticket ticket){
+        Screen screen=getScreen(screenId);
+        StringBuilder screenInfoBuilder=new StringBuilder();
+        screenInfoBuilder.append("Screen : "+screen.getScreenName()+"\n");
+        String screenInfo=screenInfoBuilder.toString();
+        ticket.setScreenInfo(screenInfo);
+        return ticket;
     }
 
 

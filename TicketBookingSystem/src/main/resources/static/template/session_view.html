@@ -31,7 +31,7 @@
                 </p>
                 <div class="row">
                   <div class="col-md-12">
-                    <a id="buyTicket" href="#" class="d-inline">
+                    <a id="buyTicket" th:href="@{'/session/'+${screenSession.getId()}+'/movie/buy'}" class="d-inline">
                       <button type="button" class="btn btn-primary">Buy Ticket</button>
                     </a>
                     <form id="deleteSession" th:action="@{'/api/session/'+ ${screenSession.getId()}}" onsubmit="deleteSession(event)" method="post" class="d-inline ml-2">

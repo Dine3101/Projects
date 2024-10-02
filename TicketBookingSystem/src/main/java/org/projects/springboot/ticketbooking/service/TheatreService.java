@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Theatre;
+import org.projects.springboot.ticketbooking.model.Ticket;
 import org.projects.springboot.ticketbooking.repository.TheatreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -115,5 +116,16 @@ public class TheatreService {
     public void dropScreens(int theatreId){
         Theatre theatre=getTheatre(theatreId);
         dropScreens(theatre);
+    }
+
+    public Ticket getTicket(int theatreId,Ticket ticket){
+        Theatre theatre=getTheatre(theatreId);
+        StringBuilder theatreInfoBuilder=new StringBuilder();
+        theatreInfoBuilder.append("Theatre : "+theatre.getName()+"\n");
+        theatreInfoBuilder.append("Owner : "+theatre.getOwnerName()+"\n");
+        theatreInfoBuilder.append("Location : "+theatre.getLocation()+"\n");
+        String theatreInfo=theatreInfoBuilder.toString();
+        ticket.setTheatreInfo(theatreInfo);
+        return ticket;
     }
 }

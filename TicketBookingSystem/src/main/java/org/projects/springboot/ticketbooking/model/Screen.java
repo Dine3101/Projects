@@ -20,6 +20,8 @@ public class Screen {
     private int id;
     private String screenName;
     private int seatCount;
+    private int rows;
+    private int cols;
     private long price;
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference

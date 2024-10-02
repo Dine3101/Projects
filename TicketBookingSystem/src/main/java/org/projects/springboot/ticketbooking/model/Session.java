@@ -21,9 +21,11 @@ public class Session {
     private int totalSeatCount;
     private int availableSeatCount;
     private long price;
+    private int rows;
+    private int cols;
     private String startTime;
     private String endTime;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference(value="screen-session")
     private Screen screen;
 }
