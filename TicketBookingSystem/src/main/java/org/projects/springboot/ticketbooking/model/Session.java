@@ -28,4 +28,12 @@ public class Session {
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference(value="screen-session")
     private Screen screen;
+
+    public void book(){
+        this.availableSeatCount--;
+    }
+
+    public boolean isFull(){
+        return this.availableSeatCount==0;
+    }
 }

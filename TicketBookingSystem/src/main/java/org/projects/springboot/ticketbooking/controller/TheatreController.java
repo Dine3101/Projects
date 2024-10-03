@@ -3,12 +3,8 @@ package org.projects.springboot.ticketbooking.controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.projects.springboot.ticketbooking.Application;
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.model.Session;
-import org.projects.springboot.ticketbooking.model.Theatre;
-import org.projects.springboot.ticketbooking.service.ScreenService;
-import org.projects.springboot.ticketbooking.service.SessionService;
-import org.projects.springboot.ticketbooking.service.TheatreService;
+import org.projects.springboot.ticketbooking.model.*;
+import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +25,12 @@ public class TheatreController {
 
     @Autowired
     SessionService sessionService;
+
+    @Autowired
+    TicketService ticketService;
+
+    @Autowired
+    MovieService movieService;
 
     @Autowired
     private Theatre theatre;
@@ -94,11 +96,16 @@ public class TheatreController {
 
     @RequestMapping("session/{session-id}/movie/buy")
     public String addSessionToMovie(@PathVariable("session-id") int sessionId){
+        Ticket ticket=ticketService.getTicket();
         Session session=sessionService.getSession(sessionId);
-        System.out.println(session.getSessionName());
-        System.out.println(session.getScreen().getScreenName());
-        System.out.println(session.getScreen().getTheatre().getName());
-        System.out.println(session.getScreen().getMovie().getName());
-        return "";
+        Screen screen=session.getScreen();
+        ticket=sessionService.getTicket(session.getId(),ticket);
+        if(ticket==null) return "home_view"; // to add feature to display session full
+        ticket=screenService.getTicket(screen.getId(),ticket);
+        ticket=theatreService.getTicket(screen.getTheatre().getId(),ticket);
+        ticket=movieService.getTicket(screen.getMovie().getId(),ticket);
+        ticketService.saveTicket(ticket);
+        System.out.println(ticket.toString());
+        return "home_view";
     }
 }
