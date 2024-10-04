@@ -116,11 +116,7 @@ public class ScreenService {
         }
     }
 
-    public Ticket getTicket(int screenId,Ticket ticket){
-        Screen screen=getScreen(screenId);
-        ticket.setScreenInfo(screen);
-        return ticket;
-    }
+
 
 
 }

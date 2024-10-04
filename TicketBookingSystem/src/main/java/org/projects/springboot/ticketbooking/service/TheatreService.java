@@ -118,9 +118,4 @@ public class TheatreService {
         dropScreens(theatre);
     }
 
-    public Ticket getTicket(int theatreId,Ticket ticket){
-        Theatre theatre=getTheatre(theatreId);
-        ticket.setTheatreInfo(theatre);
-        return ticket;
-    }
 }

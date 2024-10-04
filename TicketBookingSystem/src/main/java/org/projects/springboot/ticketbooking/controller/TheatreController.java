@@ -6,6 +6,7 @@ import org.projects.springboot.ticketbooking.Application;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,6 +41,7 @@ public class TheatreController {
 
     @Autowired
     private Session session;
+
 
     @RequestMapping("theatre")
     public ModelAndView getTheatres() {
@@ -96,16 +98,7 @@ public class TheatreController {
 
     @RequestMapping("session/{session-id}/movie/buy")
     public String addSessionToMovie(@PathVariable("session-id") int sessionId){
-        Ticket ticket=ticketService.getTicket();
-        Session session=sessionService.getSession(sessionId);
-        Screen screen=session.getScreen();
-        ticket=sessionService.getTicket(session.getId(),ticket);
-        if(ticket==null) return "redirect:/ticket"; // to add feature to display error -> session full
-        ticket=screenService.getTicket(screen.getId(),ticket);
-        ticket=theatreService.getTicket(screen.getTheatre().getId(),ticket);
-        ticket=movieService.getTicket(screen.getMovie().getId(),ticket);
-        ticketService.saveTicket(ticket);
-        //System.out.println(ticket.toString());
+        if(sessionService.genTicket(sessionId)==false) return "redirec:/ticket"; // to add feature to display error -> session full
         return "redirect:/ticket";
     }
 }

@@ -53,13 +53,13 @@ public class SessionService {
         dropSession(getSession(sessionId));
     }
 
-    public Ticket getTicket(int sessionId,Ticket ticket){
+    public boolean genTicket(int sessionId){
         Session session=getSession(sessionId);
-        if(session.isFull()) return null;
-        ticket.setSessionInfo(session);
+        if(session.isFull()) return false;
+        ticketService.genTicket(session);
         session.book();
         saveSession(session);
-        return ticket;
+        return true;
     }
 
 

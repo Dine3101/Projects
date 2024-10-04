@@ -97,9 +97,5 @@ public class MovieService {
         saveMovie(movie);
     }
 
-    public Ticket getTicket(int movieId,Ticket ticket){
-        Movie movie=getMovie(movieId);
-        ticket.setMovieInfo(movie);
-        return ticket;
-    }
+
 }
