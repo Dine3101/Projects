@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="~{fragments/head::head}"></head>
+    <body class="sub_page">
+        <div class="hero_area">
+            <div class="bg-box">
+              <img src="images/hero-bg.jpg" alt="">
+            </div>
+            <!-- header section strats -->
+            <header th:insert="~{fragments/header::header}"></header>
+            <!-- end header section -->
+        </div>
+
+        <section class="book_section layout_padding">
+            <div class="container">      
+                <div class="row">
+                    <div class="col-md-6" th:each="ticket : ${tickets}">
+                        <div class="card text-white bg-info border-warning mb-4">
+                            <div class="card-header">
+                            <h3 th:text="'Ticket : '+${ticket.getId()}"></h3>
+                            </div>
+                            <div class="card-body">  
+                                <p>Please follow the rules and enjoy the movie!!!</p>
+                            </div>     
+                            <ul class="list-group list-group-flush text-black">
+                                <li class="list-group-item">
+                                    <h3>Theatre</h3></br>
+                                    <p th:text="${ticket.getTheatreInfo()}"></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3>Movie</h3></br>
+                                    <p th:text="${ticket.getMovieInfo()}"></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3>Screen</h3></br>
+                                    <p th:text="${ticket.getScreenInfo()}"></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3>Session</h3></br>
+                                    <p th:text="${ticket.getSessionInfo()}"></p>
+                                </li>
+                            </ul>                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer th:insert="~{fragments/footer::footer}"></footer>
+    </body>
+
+</html>

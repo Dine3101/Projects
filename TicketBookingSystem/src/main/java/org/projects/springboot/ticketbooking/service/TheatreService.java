@@ -120,12 +120,7 @@ public class TheatreService {
 
     public Ticket getTicket(int theatreId,Ticket ticket){
         Theatre theatre=getTheatre(theatreId);
-        StringBuilder theatreInfoBuilder=new StringBuilder();
-        theatreInfoBuilder.append("Theatre : "+theatre.getName()+"\n");
-        theatreInfoBuilder.append("Owner : "+theatre.getOwnerName()+"\n");
-        theatreInfoBuilder.append("Location : "+theatre.getLocation()+"\n");
-        String theatreInfo=theatreInfoBuilder.toString();
-        ticket.setTheatreInfo(theatreInfo);
+        ticket.setTheatreInfo(theatre);
         return ticket;
     }
 }

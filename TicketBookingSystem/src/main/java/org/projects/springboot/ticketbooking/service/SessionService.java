@@ -56,21 +56,9 @@ public class SessionService {
     public Ticket getTicket(int sessionId,Ticket ticket){
         Session session=getSession(sessionId);
         if(session.isFull()) return null;
-        int soldSeatCount=session.getTotalSeatCount()-session.getAvailableSeatCount();
-        int seatId=soldSeatCount;
-        int rows=session.getRows();
-        int cols=session.getCols();
-        String seat=(char)('a'+(seatId/cols))+""+(seatId%cols);
-        StringBuilder sessionInfoBuilder=new StringBuilder();
-        sessionInfoBuilder.append("Session : "+session.getSessionName()+"\n");
-        sessionInfoBuilder.append("Start Time : "+session.getStartTime()+"\n");
-        sessionInfoBuilder.append("End Time : "+session.getEndTime()+"\n");
-        sessionInfoBuilder.append("Price : "+session.getPrice()+"\n");
-        sessionInfoBuilder.append("Seat Id : "+seat+"\n");
-        String sessionInfo=sessionInfoBuilder.toString();
+        ticket.setSessionInfo(session);
         session.book();
         saveSession(session);
-        ticket.setSessionInfo(sessionInfo);
         return ticket;
     }
 

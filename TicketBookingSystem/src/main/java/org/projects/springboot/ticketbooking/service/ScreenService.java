@@ -118,10 +118,7 @@ public class ScreenService {
 
     public Ticket getTicket(int screenId,Ticket ticket){
         Screen screen=getScreen(screenId);
-        StringBuilder screenInfoBuilder=new StringBuilder();
-        screenInfoBuilder.append("Screen : "+screen.getScreenName()+"\n");
-        String screenInfo=screenInfoBuilder.toString();
-        ticket.setScreenInfo(screenInfo);
+        ticket.setScreenInfo(screen);
         return ticket;
     }
 

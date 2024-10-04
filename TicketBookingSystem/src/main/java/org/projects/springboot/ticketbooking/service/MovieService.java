@@ -99,11 +99,7 @@ public class MovieService {
 
     public Ticket getTicket(int movieId,Ticket ticket){
         Movie movie=getMovie(movieId);
-        StringBuilder movieInfoBuilder=new StringBuilder();
-        movieInfoBuilder.append("Movie : "+movie.getName()+"\n");
-        movieInfoBuilder.append("Language : "+movie.getLanguage()+"\n");
-        String movieInfo=movieInfoBuilder.toString();
-        ticket.setMovieInfo(movieInfo);
+        ticket.setMovieInfo(movie);
         return ticket;
     }
 }

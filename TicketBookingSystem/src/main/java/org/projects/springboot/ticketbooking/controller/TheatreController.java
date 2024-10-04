@@ -100,12 +100,12 @@ public class TheatreController {
         Session session=sessionService.getSession(sessionId);
         Screen screen=session.getScreen();
         ticket=sessionService.getTicket(session.getId(),ticket);
-        if(ticket==null) return "home_view"; // to add feature to display session full
+        if(ticket==null) return "redirect:/ticket"; // to add feature to display error -> session full
         ticket=screenService.getTicket(screen.getId(),ticket);
         ticket=theatreService.getTicket(screen.getTheatre().getId(),ticket);
         ticket=movieService.getTicket(screen.getMovie().getId(),ticket);
         ticketService.saveTicket(ticket);
-        System.out.println(ticket.toString());
-        return "home_view";
+        //System.out.println(ticket.toString());
+        return "redirect:/ticket";
     }
 }
