@@ -15,29 +15,36 @@
             <div class="container">      
                 <div class="row">
                     <div class="col-md-6" th:each="ticket : ${tickets}">
-                        <div class="card text-white bg-info border-warning mb-4">
+                        <div class="card text-black bg-info border-warning mb-4">
                             <div class="card-header">
                             <h3 th:text="'Ticket : '+${ticket.getId()}"></h3>
                             </div>
                             <div class="card-body">  
                                 <p>Please follow the rules and enjoy the movie!!!</p>
                             </div>     
-                            <ul class="list-group list-group-flush text-black">
-                                <li class="list-group-item">
-                                    <h3>Theatre</h3></br>
-                                    <p th:text="${ticket.getTheatreInfo()}"></p>
-                                </li>
+                            <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <h3>Movie</h3></br>
-                                    <p th:text="${ticket.getMovieInfo()}"></p>
+                                    <h5 th:text="'Name : '+${ticket.getMovieName()}"></h5></br>
+                                    <h5 th:text="'Language : '+${ticket.getMovieLanguage()}"></h5></br>
+                                </li>
+                                <li class="list-group-item">
+                                    <h3>Theatre</h3></br>
+                                    <h5 th:text="'Name : '+${ticket.getTheatreName()}"></h5></br>
+                                    <h5 th:text="'Owner : '+${ticket.getTheatreOwnerName()}"></h5></br>
+                                    <h5 th:text="'Location : '+${ticket.getTheatreLocation()}"></h5></br>
                                 </li>
                                 <li class="list-group-item">
                                     <h3>Screen</h3></br>
-                                    <p th:text="${ticket.getScreenInfo()}"></p>
+                                    <h5 th:text="'Name : '+${ticket.getScreenName()}"></h5></br>
                                 </li>
                                 <li class="list-group-item">
                                     <h3>Session</h3></br>
-                                    <p th:text="${ticket.getSessionInfo()}"></p>
+                                    <h5 th:text="'Name : '+${ticket.getSessionName()}"></h5></br>
+                                    <h5 th:text="'Start Time : '+${ticket.getSessionStartTime()}"></h5></br>
+                                    <h5 th:text="'End Time : '+${ticket.getSessionEndTime()}"></h5></br>
+                                    <h5 th:text="'Price : '+${ticket.getSessionPrice()}"></h5></br>
+                                    <h4 th:text="'Seat Id : '+${ticket.getSessionSeatId()}"></h5></br>
                                 </li>
                             </ul>                       
                         </div>
