@@ -1,10 +1,12 @@
 package org.projects.springboot.ticketbooking.configuration;
 
+import org.projects.springboot.ticketbooking.model.AppUser;
 import org.projects.springboot.ticketbooking.model.Movie;
 import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Theatre;
 import org.projects.springboot.ticketbooking.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -48,5 +50,18 @@ public class ModelConfiguration {
         screen.setRows(5);
         screen.setCols(5);
         return screen;
+    }
+
+    @Bean
+    public AppUser user(){
+        return new AppUser();
+    }
+    @Bean
+    public AppUser demoUser(){
+        AppUser user =new AppUser();
+        user.setId(1);
+        user.setUserId("demo123");
+        user.setPassword("demo123");
+        return user;
     }
 }

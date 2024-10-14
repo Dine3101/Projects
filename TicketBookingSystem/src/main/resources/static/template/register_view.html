@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/head::head}"></head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img th:src="@{/images/hero-bg.jpg}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header th:insert="~{fragments/header::header}"></header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container text-white">
+        <h2>
+          User Information
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form id="addUser" th:action="@{'/api/user/register'}" th:object="${appUser}" method="post" onsubmit="addUser(event)">
+              <div>
+                <label for="userId" style="color : white;">Enter User Id:</label>
+                <input id="userId" type="text" class="form-control" placeholder="User Id" th:field="*{userId}" />
+              </div>
+              <div>
+                <label for="password" style="color : white;">Enter New Password:</label>
+                <input id="password" type="password" class="form-control" placeholder="Password" th:field="*{password}"/>
+              </div>
+              <button type="submit" class="btn btn-success" onclick="addUser(event)">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer th:insert="~{fragments/footer::footer}"></footer>
+  <script>
+    function addUser(event) {
+  
+      event.preventDefault();
+  
+  
+        const form = document.getElementById('addUser');
+        const url = form.action;
+        
+        const formData=new FormData(form);
+
+        const data={};
+  
+        formData.forEach((value,key)=>{
+          data[key]=value;
+        });
+  
+  
+        fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+          },
+          body:JSON.stringify(data),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('User Added successfully!');
+                // Optionally, redirect or update the UI
+                window.location.href = `theatre`;
+            } else {
+                alert('Failed to add user');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    </script>
+  <!-- footer section -->       
+
+</body>
+
+</html>

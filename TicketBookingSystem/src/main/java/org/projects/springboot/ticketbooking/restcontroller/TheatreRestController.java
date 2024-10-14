@@ -1,8 +1,10 @@
 package org.projects.springboot.ticketbooking.restcontroller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -62,6 +64,11 @@ public class TheatreRestController {
     public void deleteTheatreScreens(@PathVariable("theatre-id") int theatreId){
         theatreService.dropScreens(theatreId);
     }
-    
+
+    @GetMapping("csrf-token")
+    public CsrfToken getCsrfToken(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute("_csrf");
+    }
+
 
 }
