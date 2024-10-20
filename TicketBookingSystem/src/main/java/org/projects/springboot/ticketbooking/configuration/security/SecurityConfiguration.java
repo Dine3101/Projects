@@ -23,8 +23,20 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(customizer->customizer.disable())
-                .authorizeHttpRequests(request->request.anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+                .authorizeHttpRequests(request->request
+                        .requestMatchers("/","/css/**","/js/**","/fonts/**","/images/**","/login","/logout","/register")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated())
+                .formLogin(form->form
+                        .loginPage("/login-form")
+                        .usernameParameter("user-id")
+                        .passwordParameter("password")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/",true)
+                        .permitAll())
+                .logout(logout->logout
+                        .permitAll())
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }

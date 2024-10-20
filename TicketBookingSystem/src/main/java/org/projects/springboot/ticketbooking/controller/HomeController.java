@@ -5,6 +5,7 @@ import org.projects.springboot.ticketbooking.model.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,5 +24,10 @@ public class HomeController {
         ModelAndView mv=new ModelAndView("register_view");
         mv.addObject("appUser",user);
         return mv;
+    }
+
+    @GetMapping("/login-form")
+    public String login(){
+        return "login-view";
     }
 }

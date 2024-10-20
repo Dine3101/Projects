@@ -4,7 +4,7 @@
 <header class="header_section" th:fragment="header">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href=".">
+        <a class="navbar-brand" href="">
           <span>
             Cinema
           </span>
@@ -30,7 +30,7 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="" class="order_online">
+            <a th:href="@{/login}" class="order_online">
               Sign In
             </a>
           </div>
