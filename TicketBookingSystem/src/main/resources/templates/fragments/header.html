@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 <header class="header_section" th:fragment="header">
     <div class="container">
@@ -29,15 +29,19 @@
               <a class="nav-link" href="ticket">Tickets</a>
             </li>
           </ul>
-          <div class="user_option">
+          <div class="user_option" sec:authorize="!isAuthenticated()">
             <a th:href="@{/login}" class="order_online">
               Sign In
             </a>
           </div>
-          <h2>/</h2>
-          <div class="user_option">
+          <div class="user_option" sec:authorize="!isAuthenticated()">
             <a href="register" class="order_online">
               Register
+            </a>
+          </div>
+          <div class="user_option" sec:authorize="isAuthenticated()">
+            <a th:href="@{/logout}" class="order_online">
+              Logout
             </a>
           </div>
         </div>
