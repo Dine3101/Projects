@@ -37,11 +37,11 @@
               </div>
               <div>
                 <label for="role" style="color : white;">Choose Purpose:</label>
-                <select id="role">
-                  <option type="hidden" name="role-id" value="1">Admin</option>
-                  <option type="hidden" name="role-id" value="2">Sell Movie Tickets</option>
-                  <option type="hidden" name="role-id" value="3">Distribute Movies</option>
-                  <option type="hidden" name="role-id" value="4">Buy Movie Tickets</option>
+                <select id="roleName" name="roleName">
+                  <option value="ADMIN">Admin</option>
+                  <option value="THEATRE_OWNER">Sell Movie Tickets</option>
+                  <option value="MOVIE_DISTRIBUTOR">Distribute Movies</option>
+                  <option value="MOVIE_VIEWER">Buy Movie Tickets</option>
                 </select>
               </div>
               <button type="submit" class="btn btn-success" onclick="addUser(event)">Register</button>
@@ -63,7 +63,9 @@
   
   
         const form = document.getElementById('addUser');
-        const url = form.action;
+        const roleName=document.getElementById('roleName').value;
+        const url = `${form.action}/${roleName}`;
+
         
         const formData=new FormData(form);
 
@@ -72,7 +74,6 @@
         formData.forEach((value,key)=>{
           data[key]=value;
         });
-  
   
         fetch(url, {
             method: 'POST',

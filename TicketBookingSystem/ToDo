@@ -1,2 +1,1 @@
-Feat: Create Models -> viewers, theatreOwner, admin and movieDistributors and Add roles
-Feat: According to roles, provide services
+Feat: Provide Access based control

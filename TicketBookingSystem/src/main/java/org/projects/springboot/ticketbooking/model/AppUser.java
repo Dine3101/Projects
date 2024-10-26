@@ -20,8 +20,7 @@ public class AppUser {
     private String userId;
     private String password;
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JsonManagedReference(value="user-role")
-    @JoinColumn(name="role_id")
+    @JsonBackReference(value="user-role")
     private Role role;
 
 }

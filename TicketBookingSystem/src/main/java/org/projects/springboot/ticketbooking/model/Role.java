@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -21,6 +22,6 @@ public class Role {
     private String name;
     private String purpose;
     @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
-    @JsonBackReference(value="user-role")
+    @JsonManagedReference(value="user-role")
     private List<AppUser> appUsers;
 }

@@ -66,16 +66,15 @@ public class ModelConfiguration {
     @Bean
     public Role movieViewer(){
         Role role=new Role();
-        role.setId(4);
         role.setName("MOVIE_VIEWER");
         role.setPurpose("buy movie tickets");
         role.setAppUsers(new LinkedList<>());
         return role;
     }
+
     @Bean
     public Role movieDistributor(){
         Role role=new Role();
-        role.setId(3);
         role.setName("MOVIE_DISTRIBUTOR");
         role.setPurpose("distribute movies");
         role.setAppUsers(new LinkedList<>());
@@ -85,7 +84,6 @@ public class ModelConfiguration {
     @Bean
     public Role theatreOwner(){
         Role role=new Role();
-        role.setId(2);
         role.setName("THEATRE_OWNER");
         role.setPurpose("sell movie tickets");
         role.setAppUsers(new LinkedList<>());
@@ -95,7 +93,6 @@ public class ModelConfiguration {
     @Bean
     public Role admin(){
         Role role=new Role();
-        role.setId(1);
         role.setName("ADMIN");
         role.setPurpose("admin");
         role.setAppUsers(new LinkedList<>());

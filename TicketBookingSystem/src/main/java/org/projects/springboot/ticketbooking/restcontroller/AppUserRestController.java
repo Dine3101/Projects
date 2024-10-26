@@ -13,10 +13,9 @@ public class AppUserRestController {
     @Autowired
     private AppUserService appUserService;
 
-    @PostMapping("user/register")
-    public void postUser(@RequestBody AppUser user,@RequestParam("role-id") int roleId){
-        appUserService.addUser(user);
-        System.out.println(roleId);
+    @PostMapping("user/register/{role-name}")
+    public void postUser(@RequestBody AppUser user,@PathVariable("role-name") String roleName){
+        appUserService.addUser(user,roleName);
     }
 
     @GetMapping("users")

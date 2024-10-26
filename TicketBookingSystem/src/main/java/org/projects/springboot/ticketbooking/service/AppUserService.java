@@ -28,6 +28,11 @@ public class AppUserService {
     public void addUser(AppUser user){
         saveUser(user);
     }
+
+    public void addUser(AppUser user,String roleName){
+        user.setRole(roleService.getRole(roleName));
+        saveUser(user);
+    }
     public void initSample(){
         demoUser.setRole(roleService.getRole("ADMIN"));
         saveUser(demoUser);
