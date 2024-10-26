@@ -1,15 +1,13 @@
 package org.projects.springboot.ticketbooking.configuration;
 
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.model.Movie;
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.model.Theatre;
+import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 
 @Configuration
@@ -63,5 +61,44 @@ public class ModelConfiguration {
         user.setUserId("demo123");
         user.setPassword("demo123");
         return user;
+    }
+
+    @Bean
+    public Role movieViewer(){
+        Role role=new Role();
+        role.setId(4);
+        role.setName("MOVIE_VIEWER");
+        role.setPurpose("buy movie tickets");
+        role.setAppUsers(new LinkedList<>());
+        return role;
+    }
+    @Bean
+    public Role movieDistributor(){
+        Role role=new Role();
+        role.setId(3);
+        role.setName("MOVIE_DISTRIBUTOR");
+        role.setPurpose("distribute movies");
+        role.setAppUsers(new LinkedList<>());
+        return role;
+    }
+
+    @Bean
+    public Role theatreOwner(){
+        Role role=new Role();
+        role.setId(2);
+        role.setName("THEATRE_OWNER");
+        role.setPurpose("sell movie tickets");
+        role.setAppUsers(new LinkedList<>());
+        return role;
+    }
+
+    @Bean
+    public Role admin(){
+        Role role=new Role();
+        role.setId(1);
+        role.setName("ADMIN");
+        role.setPurpose("admin");
+        role.setAppUsers(new LinkedList<>());
+        return role;
     }
 }

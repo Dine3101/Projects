@@ -35,6 +35,15 @@
                 <label for="password" style="color : white;">Enter New Password:</label>
                 <input id="password" type="password" class="form-control" placeholder="Password" th:field="*{password}"/>
               </div>
+              <div>
+                <label for="role" style="color : white;">Choose Purpose:</label>
+                <select id="role">
+                  <option type="hidden" name="role-id" value="1">Admin</option>
+                  <option type="hidden" name="role-id" value="2">Sell Movie Tickets</option>
+                  <option type="hidden" name="role-id" value="3">Distribute Movies</option>
+                  <option type="hidden" name="role-id" value="4">Buy Movie Tickets</option>
+                </select>
+              </div>
               <button type="submit" class="btn btn-success" onclick="addUser(event)">Register</button>
             </form>
           </div>

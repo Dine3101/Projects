@@ -2,6 +2,7 @@ package org.projects.springboot.ticketbooking.controller;
 
 
 import org.projects.springboot.ticketbooking.model.AppUser;
+import org.projects.springboot.ticketbooking.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ public class HomeController {
 
     @Autowired
     private AppUser user;
+
     @RequestMapping("/")
     public String homePage(){
         return "home_view";

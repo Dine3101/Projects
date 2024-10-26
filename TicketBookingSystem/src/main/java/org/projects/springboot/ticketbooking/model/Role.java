@@ -7,21 +7,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Set;
 
 @Component
 @Entity
 @Data
 @NoArgsConstructor
-public class AppUser {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String userId;
-    private String password;
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JsonManagedReference(value="user-role")
-    @JoinColumn(name="role_id")
-    private Role role;
-
+    private Integer id;
+    private String name;
+    private String purpose;
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
+    @JsonBackReference(value="user-role")
+    private List<AppUser> appUsers;
 }
