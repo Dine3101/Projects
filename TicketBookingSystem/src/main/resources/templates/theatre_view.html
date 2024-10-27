@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:insert="~{fragments/head::head}"></head>
 <body class="sub_page">
@@ -27,10 +27,10 @@
                 <p th:text="'Owner : '+${theatre.getOwnerName()}+' | Location : '+${theatre.getLocation()}"></p>
                 <div class="row">
                   <div class="col-md-12">
-                    <a id="getScreens" th:href="@{'/theatre/'+${theatre.getId()}+'/screen/view'}" class="d-inline">
+                    <a id="getScreens" th:href="@{'/theatre/'+${theatre.getId()}+'/screen/view'}" class="d-inline mr-2">
                       <button type="button" class="btn btn-primary">View Screens</button>
                     </a>
-                    <form id="deleteTheatre" th:action="@{'/api/theatre/'+ ${theatre.getId()}}" onsubmit="deleteTheatre(event)" method="post" class="d-inline ml-2">
+                    <form id="deleteTheatre" sec:authorize="hasAnyAuthority('ADMIN','THEATRE_OWNER')" th:action="@{'/api/theatre/'+ ${theatre.getId()}}" onsubmit="deleteTheatre(event)" method="post" class="d-inline">
                       <button type="submit" class="btn btn-danger" onclick="deleteTheatre(event)">Delete</button>
                     </form>
                   </div>  
