@@ -21,7 +21,7 @@ public class Role {
     private Integer id;
     private String name;
     private String purpose;
-    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "role",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JsonManagedReference(value="user-role")
     private List<AppUser> appUsers;
 }

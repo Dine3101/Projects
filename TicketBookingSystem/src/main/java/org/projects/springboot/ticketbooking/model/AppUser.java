@@ -17,10 +17,16 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(unique = true)
     private String userId;
     private String password;
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JsonBackReference(value="user-role")
     private Role role;
+
+    public AppUser (String userId,String password){
+        this.userId=userId;
+        this.password=password;
+    }
 
 }

@@ -18,6 +18,9 @@ public class RoleService {
         roleRepository.save(role);
     }
 
+    public void saveRole(Role role){
+        roleRepository.save(role);
+    }
     public void init(){
         roleRepository.save(admin);
         roleRepository.save(movieViewer);
@@ -27,6 +30,7 @@ public class RoleService {
     public Role getRole(String name){
         return roleRepository.findByName(name);
     }
+
 
     public List<Role> getRoles(){
         return roleRepository.findAll();

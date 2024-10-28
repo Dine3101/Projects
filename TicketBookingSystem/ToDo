@@ -1,1 +1,4 @@
-Feat: Provide Access based control
+FIX: Provide ways to handle errors and add /error page
+FEAT: Provide access to authorized resources (eg: to show only the tickets purchased by a user for that user or to show a theatre_owner only the theatres owned by him)
+FEAT: Add Database
+

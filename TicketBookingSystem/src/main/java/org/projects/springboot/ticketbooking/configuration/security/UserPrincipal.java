@@ -14,11 +14,14 @@ public class UserPrincipal implements UserDetails {
     public UserPrincipal(AppUser user){
         this.user=user;
     }
+
+    public AppUser getUser(){
+        return this.user;
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(user.getRole().getName()));
     }
-
     @Override
     public String getPassword() {
         return user.getPassword();

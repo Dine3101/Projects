@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:insert="~{fragments/head::head}"></head>
 <body class="sub_page">
@@ -31,10 +31,10 @@
                 </p>
                 <div class="row">
                   <div class="col-md-12">
-                    <a id="buyTicket" th:href="@{'/session/'+${screenSession.getId()}+'/movie/buy'}" class="d-inline">
+                    <a sec:authorize="hasAnyAuthority('ADMIN','MOVIE_VIEWER')" id="buyTicket" th:href="@{'/session/'+${screenSession.getId()}+'/movie/buy'}" class="d-inline mr-2">
                       <button type="button" class="btn btn-primary">Buy Ticket</button>
                     </a>
-                    <form id="deleteSession" th:action="@{'/api/session/'+ ${screenSession.getId()}}" onsubmit="deleteSession(event)" method="post" class="d-inline ml-2">
+                    <form sec:authorize="hasAnyAuthority('ADMIN','THEATRE_OWNER')" id="deleteSession" th:action="@{'/api/session/'+ ${screenSession.getId()}}" onsubmit="deleteSession(event)" method="post" class="d-inline">
                       <input type="hidden" name="screenId" th:value="${screenId}">
                       <button type="submit" class="btn btn-danger" onclick="deleteSession(event)">Delete</button>
                     </form>
@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <a th:href="@{'/screen/'+${screenId}+'/session/add'}">
+      <a sec:authorize="hasAnyAuthority('ADMIN','THEATRE_OWNER')" th:href="@{'/screen/'+${screenId}+'/session/add'}">
         <button type="button" class="btn btn-primary">Add Session</button>
       </a>
       <a th:href="@{'theatre/'+${screen.getTheatre().getId()}+'/screen/view'}">

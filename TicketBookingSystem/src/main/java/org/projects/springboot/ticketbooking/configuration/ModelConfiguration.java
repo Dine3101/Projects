@@ -54,20 +54,31 @@ public class ModelConfiguration {
     public AppUser user(){
         return new AppUser();
     }
-    @Bean
-    public AppUser demoUser(){
-        AppUser user =new AppUser();
-        user.setId(1);
-        user.setUserId("demo123");
-        user.setPassword("demo123");
-        return user;
+    @Bean(name="Admin")
+    public AppUser user1(){
+        return new AppUser("admin","admin");
+    }
+
+    @Bean(name="Viewer")
+    public AppUser user2(){
+        return new AppUser("viewer","user");
+    }
+
+    @Bean(name="Distributor")
+    public AppUser user3(){
+        return new AppUser("distributor","user");
+    }
+
+    @Bean(name="Owner")
+    public AppUser user4(){
+        return new AppUser("owner","user");
     }
 
     @Bean
     public Role movieViewer(){
         Role role=new Role();
         role.setName("MOVIE_VIEWER");
-        role.setPurpose("buy movie tickets");
+        role.setPurpose("want to buy movie tickets");
         role.setAppUsers(new LinkedList<>());
         return role;
     }
@@ -76,7 +87,7 @@ public class ModelConfiguration {
     public Role movieDistributor(){
         Role role=new Role();
         role.setName("MOVIE_DISTRIBUTOR");
-        role.setPurpose("distribute movies");
+        role.setPurpose("want to distribute movies");
         role.setAppUsers(new LinkedList<>());
         return role;
     }
@@ -85,7 +96,7 @@ public class ModelConfiguration {
     public Role theatreOwner(){
         Role role=new Role();
         role.setName("THEATRE_OWNER");
-        role.setPurpose("sell movie tickets");
+        role.setPurpose("want to sell movie tickets");
         role.setAppUsers(new LinkedList<>());
         return role;
     }
@@ -94,7 +105,7 @@ public class ModelConfiguration {
     public Role admin(){
         Role role=new Role();
         role.setName("ADMIN");
-        role.setPurpose("admin");
+        role.setPurpose("want to set up the application");
         role.setAppUsers(new LinkedList<>());
         return role;
     }

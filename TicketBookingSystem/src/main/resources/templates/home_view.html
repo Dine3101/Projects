@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:insert="~{fragments/head::head}"></head>
 
@@ -15,13 +15,26 @@
   </div>
 
   <section class="book_section layout_padding">
-    <div class="container">
-      <a href="theatre/add">
-        <button type="button" class="btn btn-primary">Add Theatre</button>
-      </a>
-      <a href="movie/add">
-        <button type="button" class="btn btn-primary">Add Movie</button>
-      </a>
+    <div class="container text-white">
+      <p>
+        <div sec:authorize="isAuthenticated()">
+          <h3>Welcome, <span th:text="${user.getUserId()}"></span>!</h3></br>
+        </div>
+        <h4>Experience a single platform to purchase tickets to watch latest movies, to buy movies for your theatre and to distribute your movies!!!</br></h4>
+      </p>
+      <div sec:authorize="hasAnyAuthority('THEATRE_OWNER')">
+        <p><span th:text="${user.getRole().getPurpose()}"></span>? Use the below buttons.</br>
+        <a href="theatre/add"><button type="button" class="btn btn-primary">Add Theatre</button></a></p>
+      </div>
+      <div sec:authorize="hasAnyAuthority('MOVIE_DISTRIBUTOR')">
+        <p><span th:text="${user.getRole().getPurpose()}"></span>? Use the below buttons.</br>
+        <a href="movie/add"><button type="button" class="btn btn-primary">Add Movie</button></a></p>
+      </div>
+      <div sec:authorize="hasAnyAuthority('ADMIN')">
+        <p><span th:text="${user.getRole().getPurpose()}"></span>? Use the below buttons.</br>
+        <a href="theatre/add"><button type="button" class="btn btn-primary">Add Theatre</button></a>
+        <a href="movie/add"><button type="button" class="btn btn-primary">Add Movie</button></a></p>
+      </div>
     </div>
   </section>
   <!-- end book section -->
