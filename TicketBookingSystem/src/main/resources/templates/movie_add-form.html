@@ -75,10 +75,20 @@
                 // Optionally, redirect or update the UI
                 window.location.href = 'movie';
             } else {
-                alert('Failed to add Movie.');
+                return response.text().then(message=>{
+                  const errorUrl=`server-error?message=${encodeURIComponent(message)}`
+                  alert('Movie is not added!');
+                  window.location.href=errorUrl;
+                });                
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+          const message='Unexpected Error occurred while adding movie';
+          const errorUrl=`server-error?message=${encodeURIComponent(message)}`
+          alert('Movie Failure!');
+          window.location.href=errorUrl;
+          // console.error('Error:', error)
+        });
     }
     </script>
   <!-- footer section -->       

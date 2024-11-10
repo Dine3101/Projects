@@ -34,6 +34,7 @@ public class ModelConfiguration {
         Theatre theatre=new Theatre();
         theatre.setId(1);
         theatre.setName("Sample Theatre");
+        theatre.setLocation("Sample Location");
         theatre.setScreens(new LinkedList<>());
         return theatre;
     }

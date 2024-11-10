@@ -24,12 +24,17 @@ public class StartRunnerConfiguration implements CommandLineRunner {
     private RoleService roleService;
 
     public void run(String[] args){
-        screenService.initSample();
-        theatreService.initSample();
-        theatreService.addScreen(1,1);
-        movieService.initSample();
-        movieService.addScreen(1,1);
-        roleService.init();
-        appUserService.initSample();
+        try {
+            screenService.initSample();
+            theatreService.initSample();
+            theatreService.addScreen(1, 1);
+            movieService.initSample();
+            movieService.addScreen(1, 1);
+            roleService.init();
+            appUserService.initSample();
+        }catch(Exception e){
+            System.out.println("Error while  initializing samples");
+            System.out.println(e.getMessage());
+        }
     }
 }

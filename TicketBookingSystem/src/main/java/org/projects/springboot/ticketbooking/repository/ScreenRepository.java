@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ScreenRepository extends JpaRepository<Screen,Integer> {
+    public Screen findByScreenName(String screenName);
 }

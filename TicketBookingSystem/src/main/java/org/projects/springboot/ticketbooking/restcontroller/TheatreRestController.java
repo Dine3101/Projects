@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +27,13 @@ public class TheatreRestController {
     private SessionService sessionService;
 
     @PostMapping("theatre")
-    public void postTheatre(@RequestBody Theatre theatre){
-        theatreService.addTheatre(theatre);
+    public ResponseEntity postTheatre(@RequestBody Theatre theatre){
+        try {
+            theatreService.addTheatre(theatre);
+            return ResponseEntity.ok("Theatre Added Successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @PostMapping("theatre/{theatre-id}/screen")

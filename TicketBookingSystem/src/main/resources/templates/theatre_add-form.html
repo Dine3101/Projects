@@ -75,13 +75,22 @@
         .then(response => {
             if (response.ok) {
                 alert('Theatre Added successfully!');
-                // Optionally, redirect or update the UI
                 window.location.href = 'theatre';
             } else {
-                alert('Failed to add theatre.');
+                return response.text().then(message=>{
+                  // const errorUrl=`server-error?message=${encodeURIComponent(message)}`
+                  alert(message);
+                  // window.location.href=errorUrl;
+                });                
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+          const message='Unexpected Error occurred while adding theatre';
+          const errorUrl=`server-error?message=${encodeURIComponent(message)}`
+          alert('Theatre Failure!');
+          window.location.href=errorUrl;
+          // console.error('Error:', error)
+        });
     }
     </script>
   <!-- footer section -->       

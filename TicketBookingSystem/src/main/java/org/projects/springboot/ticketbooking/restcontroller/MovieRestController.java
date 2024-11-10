@@ -5,6 +5,8 @@ import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.service.MovieService;
 import org.projects.springboot.ticketbooking.service.ScreenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,13 @@ public class MovieRestController {
     @Autowired
     private ScreenService screenService;
     @PostMapping("movie")
-    public void postMovie(@RequestBody Movie movie){
-        movieService.addMovie(movie);
+    public ResponseEntity postMovie(@RequestBody Movie movie){
+        try {
+            movieService.addMovie(movie);
+            return ResponseEntity.ok("Movie added successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @GetMapping("movies")

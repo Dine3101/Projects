@@ -39,6 +39,9 @@ public class MovieService {
         return movieRepository.findById(movieId).get();
     }
 
+    public Movie getMovie(String name){
+        return movieRepository.findByName(name);
+    }
     public List<Movie> getMovies(){
         List<Movie> movies=movieRepository.findAll();
         return movies;
@@ -50,7 +53,9 @@ public class MovieService {
         return getMovie(1);
     }
 
-    public void addMovie(Movie movie){
+    public void addMovie(Movie movie) throws Exception{
+        if(movie.getLanguage()==null || movie.getLanguage().length()==0) throw new Exception("Please provide information for Language");
+        if(getMovie(movie.getName())!=null) throw new Exception("Movie with same name is already registered");
         movie.setScreens(new LinkedList<>());
         saveMovie(movie);
     }

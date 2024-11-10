@@ -48,6 +48,10 @@ public class ScreenService {
         return screenRepository.findById(id).get();
     }
 
+    public Screen getScreen(String screenName){
+        return screenRepository.findByScreenName(screenName);
+    }
+
     @Transactional
     public void addSession(int screenId,Session session){
         Screen screen=getScreen(screenId);

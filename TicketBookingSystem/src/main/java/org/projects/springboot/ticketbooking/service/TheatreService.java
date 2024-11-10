@@ -31,7 +31,9 @@ public class TheatreService {
     @Autowired
     @Qualifier("sampleTheatre")
     private Theatre sampleTheatre;
-    public void addTheatre(Theatre theatre){
+    public void addTheatre(Theatre theatre) throws Exception{
+        if(getTheatre(theatre.getName())!=null) throw new Exception("Theatre with same name already exists");
+        if(theatre.getLocation()==null || theatre.getLocation().length()==0) throw new Exception("Insufficient information!! Provide location");
         theatre.setScreens(new LinkedList<>());
         theatreRepository.save(theatre);
     }
@@ -62,7 +64,7 @@ public class TheatreService {
         return theatreRepository.findAll();
     }
 
-    public void initSample(){
+    public void initSample() throws Exception{
         addTheatre(sampleTheatre);
     }
 
