@@ -19,6 +19,7 @@ public class SessionService {
     private TicketService ticketService;
 
     public void addSession(Session session){
+
         sessionRepository.save(session);
     }
     public void addSession(String startTime,String endTime){

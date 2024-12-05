@@ -1,15 +1,13 @@
-package org.projects.springboot.ticketbooking.model;
+package com.bookticket.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.bookticket.model.entity.AppUser;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 @Component
 @Entity
@@ -21,7 +19,4 @@ public class Role {
     private Integer id;
     private String name;
     private String purpose;
-    @OneToMany(mappedBy = "role",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JsonManagedReference(value="user-role")
-    private List<AppUser> appUsers;
 }

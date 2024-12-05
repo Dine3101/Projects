@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/")
+@RequestMapping("api/user/")
 public class AppUserRestController {
     @Autowired
     private AppUserService appUserService;
 
-    @PostMapping("user/register/{role-name}")
+    @PostMapping("register/{role-name}")
     public void postUser(@RequestBody AppUser user,@PathVariable("role-name") String roleName){
-        appUserService.addUser(user,roleName);
+        appUserService.addRole(user.getUserId(),roleName);
     }
-
     @GetMapping("users")
     public List<AppUser> getUsers(){
         return appUserService.getUsers();

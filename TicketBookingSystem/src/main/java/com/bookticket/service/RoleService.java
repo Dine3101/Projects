@@ -11,21 +11,17 @@ import java.util.List;
 public class RoleService {
     @Autowired
     private RoleRepository roleRepository;
-
     @Autowired
     private Role admin,movieViewer,movieDistributor,theatreOwner;
+
     public void addRole(Role role){
         roleRepository.save(role);
     }
-
-    public void saveRole(Role role){
-        roleRepository.save(role);
-    }
     public void init(){
-        roleRepository.save(admin);
-        roleRepository.save(movieViewer);
-        roleRepository.save(movieDistributor);
-        roleRepository.save(theatreOwner);
+        addRole(admin);
+        addRole(movieViewer);
+        addRole(movieDistributor);
+        addRole(theatreOwner);
     }
     public Role getRole(String name){
         return roleRepository.findByName(name);

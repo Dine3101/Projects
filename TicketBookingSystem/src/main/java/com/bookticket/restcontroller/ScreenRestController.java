@@ -4,6 +4,8 @@ import org.projects.springboot.ticketbooking.model.Screen;
 import org.projects.springboot.ticketbooking.model.Session;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,9 +27,14 @@ public class ScreenRestController {
     }
 
     @PostMapping("screen/{screen-id}/session")
-    public void postSession(@PathVariable("screen-id") int screenId,@RequestBody Session session){
-        sessionService.addSession(session);
-        screenService.addSession(screenId,sessionService.getSession(session.getId()));
+    public ResponseEntity postSession(@PathVariable("screen-id") int screenId, @RequestBody Session session){
+        try {
+            sessionService.addSession(session);
+            screenService.addSession(screenId,sessionService.getSession(session.getId()));
+            return ResponseEntity.ok("Session is added successfully");
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @GetMapping("screens")

@@ -17,7 +17,7 @@ public class UserDetailsServiceConfiguration implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser user=appUserService.findByUserId(username);
+        AppUser user=appUserService.getUser(username);
         if(user==null){
             throw new UsernameNotFoundException("Unauthorized Sign In");
         }

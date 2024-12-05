@@ -19,35 +19,40 @@ public class AppUserService {
     private RoleService roleService;
     @Autowired
     private ApplicationContext applicationContext;
-
-    public AppUser findByUserId(String userId){
-        return appUserRepository.findByUserId(userId);
-    }
-
     private void saveUser(AppUser user){
         appUserRepository.save(user);
     }
-
     public void addUser(AppUser user){
         saveUser(user);
     }
+    private AppUser findByUserId(String userId){
+        return appUserRepository.findByUserId(userId);
+    }
+
+    public AppUser getUser(String userId){
+        return findByUserId(userId);
+    }
 
     @Transactional
-    public void addUser(AppUser user,String roleName){
+    private void addRole(AppUser user,String roleName){
         Role role=roleService.getRole(roleName);
         role.getAppUsers().add(user);
         user.setRole(role);
         saveUser(user);
     }
-    public void init(AppUser user,String roleName){
-        addUser(user);
-        addUser(user,roleName);
+
+    public void addRole(String userId,String roleName){
+        addRole(findByUserId(userId),roleName);
     }
-    public void initSample(){
-        init((AppUser)applicationContext.getBean("Admin"),"ADMIN");
-        init((AppUser)applicationContext.getBean("Viewer"),"MOVIE_VIEWER");
-        init((AppUser)applicationContext.getBean("Distributor"),"MOVIE_DISTRIBUTOR");
-        init((AppUser)applicationContext.getBean("Owner"),"THEATRE_OWNER");
+    private void initUser(AppUser user,String roleName){
+        addUser(user);
+        addRole(user,roleName);
+    }
+    public void init(){
+        initUser((AppUser)applicationContext.getBean("Admin"),"ADMIN");
+        initUser((AppUser)applicationContext.getBean("Viewer"),"MOVIE_VIEWER");
+        initUser((AppUser)applicationContext.getBean("Distributor"),"MOVIE_DISTRIBUTOR");
+        initUser((AppUser)applicationContext.getBean("Owner"),"THEATRE_OWNER");
     }
 
     public List<AppUser> getUsers(){
