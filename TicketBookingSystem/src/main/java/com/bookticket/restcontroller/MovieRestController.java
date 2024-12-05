@@ -1,9 +1,9 @@
-package org.projects.springboot.ticketbooking.restcontroller;
+package com.bookticket.restcontroller;
 
-import org.projects.springboot.ticketbooking.model.Movie;
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.service.MovieService;
-import org.projects.springboot.ticketbooking.service.ScreenService;
+import com.bookticket.service.ScreenService;
+import com.bookticket.model.Movie;
+import com.bookticket.model.Screen;
+import com.bookticket.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

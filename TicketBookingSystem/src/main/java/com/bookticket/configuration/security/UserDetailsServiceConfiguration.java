@@ -1,8 +1,8 @@
-package org.projects.springboot.ticketbooking.configuration.security;
+package com.bookticket.configuration.security;
 
 
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.service.AppUserService;
+import com.bookticket.model.AppUser;
+import com.bookticket.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

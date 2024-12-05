@@ -1,4 +1,4 @@
-package org.projects.springboot.ticketbooking.configuration.security;
+package com.bookticket.configuration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

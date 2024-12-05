@@ -1,7 +1,6 @@
-package org.projects.springboot.ticketbooking.model;
+package com.bookticket.model;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;

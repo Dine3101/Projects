@@ -1,13 +1,12 @@
-package org.projects.springboot.ticketbooking.configuration;
+package com.bookticket.configuration;
 
+import com.bookticket.model.*;
+import com.bookticket.model.AppUser;
+import com.bookticket.model.Role;
 import org.projects.springboot.ticketbooking.model.*;
-import org.projects.springboot.ticketbooking.service.MovieService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 
 @Configuration

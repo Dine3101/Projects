@@ -1,11 +1,9 @@
-package org.projects.springboot.ticketbooking.controller;
+package com.bookticket.controller;
 
 
-import org.projects.springboot.ticketbooking.configuration.security.UserPrincipal;
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.service.RoleService;
+import com.bookticket.configuration.security.UserPrincipal;
+import com.bookticket.model.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;

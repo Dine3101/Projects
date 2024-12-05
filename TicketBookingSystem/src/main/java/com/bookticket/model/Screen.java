@@ -1,4 +1,4 @@
-package org.projects.springboot.ticketbooking.model;
+package com.bookticket.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import javax.swing.text.StyleContext;
 import java.util.List;
 
 @Entity

@@ -1,8 +1,10 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
+import com.bookticket.model.Screen;
+import com.bookticket.model.Session;
 import jakarta.transaction.Transactional;
 import org.projects.springboot.ticketbooking.model.*;
-import org.projects.springboot.ticketbooking.repository.ScreenRepository;
+import com.bookticket.repository.ScreenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -53,7 +55,7 @@ public class ScreenService {
     }
 
     @Transactional
-    public void addSession(int screenId,Session session){
+    public void addSession(int screenId, Session session){
         Screen screen=getScreen(screenId);
         if(screen==null) return;
         sessionService.addSession(session);

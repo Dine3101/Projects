@@ -1,8 +1,7 @@
-package org.projects.springboot.ticketbooking.restcontroller;
+package com.bookticket.restcontroller;
 
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.model.Role;
-import org.projects.springboot.ticketbooking.service.RoleService;
+import com.bookticket.service.RoleService;
+import com.bookticket.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

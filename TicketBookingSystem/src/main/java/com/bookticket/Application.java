@@ -1,7 +1,5 @@
-package org.projects.springboot.ticketbooking;
+package com.bookticket;
 
-import lombok.Getter;
-import org.projects.springboot.ticketbooking.model.Theatre;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

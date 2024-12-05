@@ -1,19 +1,14 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
+import com.bookticket.repository.TheatreRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.model.Theatre;
-import org.projects.springboot.ticketbooking.model.Ticket;
-import org.projects.springboot.ticketbooking.repository.TheatreRepository;
+import com.bookticket.model.Screen;
+import com.bookticket.model.Theatre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.parser.Entity;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

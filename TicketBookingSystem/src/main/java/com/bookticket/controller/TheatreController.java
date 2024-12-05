@@ -1,15 +1,15 @@
-package org.projects.springboot.ticketbooking.controller;
+package com.bookticket.controller;
 
 
-import jakarta.servlet.http.HttpSession;
-import org.projects.springboot.ticketbooking.Application;
+import com.bookticket.model.Screen;
+import com.bookticket.model.Session;
+import com.bookticket.model.Theatre;
+import com.bookticket.service.*;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 

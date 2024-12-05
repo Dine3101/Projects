@@ -1,7 +1,7 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
-import org.projects.springboot.ticketbooking.model.Role;
-import org.projects.springboot.ticketbooking.repository.RoleRepository;
+import com.bookticket.repository.RoleRepository;
+import com.bookticket.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

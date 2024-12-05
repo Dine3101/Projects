@@ -1,9 +1,9 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.model.Session;
-import org.projects.springboot.ticketbooking.model.Ticket;
-import org.projects.springboot.ticketbooking.repository.TicketRepository;
+import com.bookticket.model.Session;
+import com.bookticket.model.Ticket;
+import com.bookticket.repository.TicketRepository;
+import com.bookticket.model.Screen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;

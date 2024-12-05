@@ -1,5 +1,6 @@
-package org.projects.springboot.ticketbooking.configuration;
+package com.bookticket.configuration;
 
+import com.bookticket.service.*;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

@@ -1,9 +1,7 @@
-package org.projects.springboot.ticketbooking.repository;
+package com.bookticket.repository;
 
-import org.projects.springboot.ticketbooking.model.Movie;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.bookticket.model.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository

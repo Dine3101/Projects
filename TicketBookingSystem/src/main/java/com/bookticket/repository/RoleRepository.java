@@ -1,6 +1,6 @@
-package org.projects.springboot.ticketbooking.repository;
+package com.bookticket.repository;
 
-import org.projects.springboot.ticketbooking.model.Role;
+import com.bookticket.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

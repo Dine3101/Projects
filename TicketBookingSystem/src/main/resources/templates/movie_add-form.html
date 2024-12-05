@@ -76,9 +76,7 @@
                 window.location.href = 'movie';
             } else {
                 return response.text().then(message=>{
-                  const errorUrl=`server-error?message=${encodeURIComponent(message)}`
-                  alert('Movie is not added!');
-                  window.location.href=errorUrl;
+                  alert(message);
                 });                
             }
         })

@@ -1,11 +1,10 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
+import com.bookticket.model.AppUser;
+import com.bookticket.model.Role;
+import com.bookticket.repository.AppUserRepository;
 import jakarta.transaction.Transactional;
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.model.Role;
-import org.projects.springboot.ticketbooking.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 

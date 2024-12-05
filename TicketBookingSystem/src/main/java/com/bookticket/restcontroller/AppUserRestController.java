@@ -1,7 +1,7 @@
-package org.projects.springboot.ticketbooking.restcontroller;
+package com.bookticket.restcontroller;
 
-import org.projects.springboot.ticketbooking.model.AppUser;
-import org.projects.springboot.ticketbooking.service.AppUserService;
+import com.bookticket.model.AppUser;
+import com.bookticket.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

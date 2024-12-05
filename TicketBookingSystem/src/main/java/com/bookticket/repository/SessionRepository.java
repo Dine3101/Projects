@@ -1,8 +1,7 @@
-package org.projects.springboot.ticketbooking.repository;
+package com.bookticket.repository;
 
-import org.projects.springboot.ticketbooking.model.Session;
+import com.bookticket.model.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository

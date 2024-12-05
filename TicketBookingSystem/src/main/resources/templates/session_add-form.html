@@ -83,10 +83,16 @@
                 // Optionally, redirect or update the UI
                 window.location.href = `screen/${screenId}/session/view`;
             } else {
-                alert('Failed to add session');
+                return response.text().then(message=>{
+                  alert(message);
+                })
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error =>{
+          const errorMessage='Unexpected error occured while adding session to screen';
+          const errorUrl=`server-error?message=${encodeURIComponent(errorMessage)}`
+          window.location.href=errorUrl;
+        });
     }
     </script>
   <!-- footer section -->       

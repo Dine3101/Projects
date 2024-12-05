@@ -1,13 +1,11 @@
-package org.projects.springboot.ticketbooking.service;
+package com.bookticket.service;
 
 import jakarta.transaction.Transactional;
-import org.projects.springboot.ticketbooking.model.Movie;
-import org.projects.springboot.ticketbooking.model.Screen;
-import org.projects.springboot.ticketbooking.model.Ticket;
-import org.projects.springboot.ticketbooking.repository.MovieRepository;
+import com.bookticket.model.Movie;
+import com.bookticket.model.Screen;
+import com.bookticket.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

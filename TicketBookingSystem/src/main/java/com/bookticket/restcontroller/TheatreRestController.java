@@ -1,5 +1,11 @@
-package org.projects.springboot.ticketbooking.restcontroller;
+package com.bookticket.restcontroller;
 
+import com.bookticket.model.Screen;
+import com.bookticket.model.Theatre;
+import com.bookticket.service.MovieService;
+import com.bookticket.service.ScreenService;
+import com.bookticket.service.SessionService;
+import com.bookticket.service.TheatreService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.projects.springboot.ticketbooking.model.*;
 import org.projects.springboot.ticketbooking.service.*;

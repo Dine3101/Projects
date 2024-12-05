@@ -1,6 +1,6 @@
-package com.bookticket.model.entity;
+package com.bookticket.model;
 
-import com.bookticket.model.relation.AppUserRole;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;

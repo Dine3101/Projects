@@ -1,7 +1,7 @@
-package org.projects.springboot.ticketbooking.controller;
+package com.bookticket.controller;
 
-import org.projects.springboot.ticketbooking.model.Ticket;
-import org.projects.springboot.ticketbooking.service.TicketService;
+import com.bookticket.model.Ticket;
+import com.bookticket.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package org.projects.springboot.ticketbooking.model;
+package com.bookticket.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

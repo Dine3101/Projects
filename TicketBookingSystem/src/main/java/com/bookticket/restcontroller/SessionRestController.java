@@ -1,6 +1,9 @@
-package org.projects.springboot.ticketbooking.restcontroller;
+package com.bookticket.restcontroller;
 
-import org.projects.springboot.ticketbooking.model.Session;
+import com.bookticket.model.Session;
+import com.bookticket.service.ScreenService;
+import com.bookticket.service.SessionService;
+import com.bookticket.service.TheatreService;
 import org.projects.springboot.ticketbooking.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
