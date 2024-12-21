@@ -1,7 +1,7 @@
 AppUser
 -
-EmailId PK varchar(20)
-Name varchar(20)
+EmailId PK varchar(50)
+Name varchar(50)
 PhoneNumber varchar(10)
 RoleId int FK >- Role.RoleId
 
@@ -9,23 +9,23 @@ RoleId int FK >- Role.RoleId
 Role
 -
 RoleId PK int
-RoleName PK varchar(20)
+RoleName PK varchar(50)
 
 
 Movie
 -
-MovieName PK varchar(20)
+MovieName PK varchar(50)
 Language varchar(10)
 Theme varchar(10)
-DistributorId varchar(20) FK >- AppUser.EmailId
+DistributorId varchar(50) FK >- AppUser.EmailId
 
 
 Theatre
 -
 TheatreId PK int
-Name varchar(20)
+Name varchar(50)
 Location varchar(20)
-OwnerId varchar(20) FK >- AppUser.EmailId
+OwnerId varchar(50) FK >- AppUser.EmailId
 
 Screen
 -
@@ -33,7 +33,7 @@ ScreenId PK int
 ScreenName varchar(20)
 SeatCount int
 TheatreId int FK >- Theatre.TheatreId
-MovieName varchar(20) FK >- Movie.MovieName
+MovieName varchar(50) FK >- Movie.MovieName
 
 Session
 -
@@ -47,11 +47,10 @@ Ticket
 -
 TicketId PK int
 SessionId int FK >- Session.SessionId
-MovieName varchar(20) FK >- Movie.MovieName
-ViewerId varchar(20) FK >- AppUser.EmailId
+ViewerId varchar(50) FK >- AppUser.EmailId
 
 WatchList
 -
 MovieId PK int
-MovieName varchar(20) FK >- Movie.MovieName
-ViewerId varchar(20) FK >- AppUser.EmailId
+MovieName varchar(50) FK >- Movie.MovieName
+ViewerId varchar(50) FK >- AppUser.EmailId

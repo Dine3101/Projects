@@ -51,3 +51,6 @@ INSERT INTO SESSION(SEAT_COUNT,START_TIME,END_TIME,SCREEN_ID) VALUES
 
 
 --insert data into table TICKET
+INSERT INTO TICKET(SESSION_ID,VIEWER_ID) VALUES
+(1,'krish@eventbuddy-qa.com'),
+(3,'ram@eventbuddy-qa.com');
