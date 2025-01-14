@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/Role/UpdateRoleRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/response/role/RoleResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/response/ResponseBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/response/role/RoleResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Design/Design_Document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Design/Design_Document.docx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2r1amGjjQNbwJ1zqQnSZbucBICC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/JAVA/GitHubWorkspace/Projects/ProfileManager/Code/profile-manager",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "inlay.hints"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pjadm.project.profilemanager.Application" />
+      <module name="profile-manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pjadm.project.profilemanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="" />
+      <created>1735729191851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735729191851</updated>
+    </task>
+    <servers />
+  </component>
+</project>
