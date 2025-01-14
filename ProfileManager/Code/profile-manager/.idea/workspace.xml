@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/Role/UpdateRoleRequestBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/response/role/RoleResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/response/ResponseBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/response/role/RoleResponseBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Design/Design_Document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Design/Design_Document.docx" afterDir="false" />
-    </list>
+    <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
