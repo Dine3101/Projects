@@ -22,20 +22,26 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/** Create a EntityManager for client EVENTBUDDY **/
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
+        basePackages = "com.pjadm.project.profilemanager.eventbuddy.repositories",
         entityManagerFactoryRef = "EventBuddyEntityManagerFactory"
 )
 public class EventBuddyDataSourceConfiguration {
 
-
+    /** Use the datasource configuration in Application.properties to create DataSourceProperties **/
     @Primary
     @Bean(name="EventBuddyDataSourceProperties")
     @ConfigurationProperties(prefix="spring.datasource.eventbuddy")
     public DataSourceProperties eventBuddyDataSourceProperties(){
         return new DataSourceProperties();
     }
+
+
+    /** Use the configured DataSourceProperties bean to create a DataSource bean. **/
     @Primary
     @Bean(name="EventBuddyDataSource")
     public DataSource eventBuddyDataSource(@Qualifier("EventBuddyDataSourceProperties")DataSourceProperties dataSourceProperties){
@@ -47,7 +53,7 @@ public class EventBuddyDataSourceConfiguration {
         return dataSource;
     }
 
-
+    /** Use the created DataSource bean to create EntityManager **/
     @Primary
     @Bean(name="EventBuddyEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean eventBuddyEntityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("EventBuddyDataSource") DataSource dataSource){
@@ -59,6 +65,7 @@ public class EventBuddyDataSourceConfiguration {
                 .build();
     }
 
+    /** Add the EntityManager to TransactionManager **/
     @Primary
     @Bean(name="EventBuddyTransactionManager")
     public PlatformTransactionManager eventBuddyTransactionManager(@Qualifier("EventBuddyEntityManagerFactory")EntityManagerFactory entityManagerFactory){

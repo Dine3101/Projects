@@ -1,45 +1,48 @@
 package com.pjadm.project.profilemanager.eventbuddy.controllers;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.Role;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.role.UpdateRoleRequestBody;
-import com.pjadm.project.profilemanager.eventbuddy.models.response.role.RoleResponseBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.request.Role.UpdateRoleRequestBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.response.ResponseBody;
 import com.pjadm.project.profilemanager.eventbuddy.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
 
+
+/** Rest API controller for Role Entity-related queries **/
 @RestController
-@RequestMapping("role/")
+@RequestMapping("eventbuddy/role/")
 public class RoleController {
 
     @Autowired
     private RoleService roleService;
 
-    @Autowired
-    private RoleResponseBody roleResponseBody;
-
-    @GetMapping("all")
+    @GetMapping("get/all")
     public List<Role> getRoles(){
         return roleService.getAllRoles();
     }
 
+    @GetMapping("get")
+    public ResponseBody<Role> getRole(@RequestBody Role role){
+        return roleService.getRole(role);
+    }
+
+
     @PostMapping("add")
-    public RoleResponseBody addRole(@RequestBody Role role){
-        roleService.addRole(role,roleResponseBody);
-        return roleResponseBody;
+    public ResponseBody<Role> addRole(@RequestBody Role role){
+        return roleService.addRole(role);
     }
 
     @PostMapping("update")
-    public RoleResponseBody updateRole(@RequestBody UpdateRoleRequestBody updateRoleRequestBody){
-        roleService.updateRole(updateRoleRequestBody,roleResponseBody);
-        return roleResponseBody;
+    public ResponseBody<Role> updateRole(@RequestBody UpdateRoleRequestBody updateRoleRequestBody){
+        return roleService.updateRole(updateRoleRequestBody);
     }
 
     @PostMapping("delete")
-    public RoleResponseBody deleteRole(@RequestBody Role role){
-        roleService.deleteRole(role,roleResponseBody);
-        return roleResponseBody;
+    public ResponseBody<Role> deleteRole(@RequestBody Role role){
+        return roleService.deleteRole(role);
     }
 }

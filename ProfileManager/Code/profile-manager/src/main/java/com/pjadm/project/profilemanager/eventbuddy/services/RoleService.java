@@ -1,54 +1,68 @@
 package com.pjadm.project.profilemanager.eventbuddy.services;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.Role;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.role.UpdateRoleRequestBody;
-import com.pjadm.project.profilemanager.eventbuddy.models.response.role.RoleResponseBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.request.Role.UpdateRoleRequestBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.response.ResponseBody;
 import com.pjadm.project.profilemanager.eventbuddy.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/** Service layer for Role Entity-related Business logic **/
 @Service
 public class RoleService {
     @Autowired
     private RoleRepository roleRepository;
-
+    @Autowired
+    private ResponseBody<Role> responseBody;
     public List<Role> getAllRoles(){
-        return roleRepository.findAllRoles();
+        return roleRepository.findAll();
     }
 
-
-    public void addRole(Role role,RoleResponseBody roleResponseBody){
-        try {
-            roleRepository.addRole(role);
-            roleResponseBody.setBody("SUCCESS","Successfully added the Role",role);
-        }catch (Exception e){
-            roleResponseBody.setBody("FAILURE","Error while adding the Role..."+e.getMessage(),role);
-        }
-    }
-
-    public void updateRole(UpdateRoleRequestBody updateRoleRequestBody,RoleResponseBody roleResponseBody){
+    public ResponseBody<Role> getRole(Role role){
         try{
-            if(updateRoleRequestBody.getPurpose().equals("Role Name Change")){
-                Role updatedRole=roleRepository.updateRole(updateRoleRequestBody);
-                roleResponseBody.setBody("SUCCESS","Successfully updated the Role",updatedRole);
+            role=roleRepository.find(role.getRoleName());
+            responseBody.setBody("SUCCESS","Successfully fetched the Role",role);
+        }catch (Exception e){
+            responseBody.setBody("FAILURE","Error while fetching the Role..."+e.getMessage(),role);
+        }
+        return responseBody;
+    }
+
+    public ResponseBody<Role> addRole(Role role){
+        try {
+            roleRepository.add(role);
+            responseBody.setBody("SUCCESS","Successfully added the Role",role);
+        }catch (Exception e){
+            responseBody.setBody("FAILURE","Error while adding the Role..."+e.getMessage(),role);
+        }
+        return responseBody;
+    }
+
+    public ResponseBody<Role> updateRole(UpdateRoleRequestBody updateRoleRequestBody){
+        try{
+            if(updateRoleRequestBody.getPurpose().equals("RoleName")){
+                Role updatedRole=roleRepository.updateRole(updateRoleRequestBody.getRoleName(), updateRoleRequestBody.getNewRoleName());
+                responseBody.setBody("SUCCESS","Successfully updated the Role",updatedRole);
             }else{
-                roleResponseBody.setBody("FAILURE","Invalid Request for Role update",null);
+                responseBody.setBody("FAILURE","Invalid Request for Role update",null);
             }
         }catch (Exception e){
-            roleResponseBody.setBody("FAILURE","Error while updating the Role..."+e.getMessage(),null);
+            responseBody.setBody("FAILURE","Error while updating the Role..."+e.getMessage(),null);
         }
+        return responseBody;
 
     }
 
-    public void deleteRole(Role role,RoleResponseBody roleResponseBody){
+    public ResponseBody<Role> deleteRole(Role role){
         try{
-            roleRepository.deleteRole(role);
-            roleResponseBody.setBody("SUCCESS","Successfully deleted the Role", role);
+            role=roleRepository.delete(role.getRoleName());
+            responseBody.setBody("SUCCESS","Successfully deleted the Role", role);
         }catch(Exception e){
-            roleResponseBody.setBody("FAILURE","Error while deleting the Role..."+e.getMessage(),role);
+            responseBody.setBody("FAILURE","Error while deleting the Role..."+e.getMessage(),role);
         }
+        return responseBody;
     }
 }
