@@ -13,18 +13,20 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 /** Repository Layer for Role Entity-related DB queries **/
 @Repository
-public class RoleRepository implements EntityRepository<Role> {
+public class RoleRepository implements EntityRepository<Role,String> {
 
     @Autowired
     @Qualifier("EventBuddyEntityManagerFactory")
     private EntityManager entityManager;
 
+    @Override
     @Transactional
     public List<Role> findAll(){
         List<Role> roles=entityManager.createQuery("FROM Role",Role.class).getResultList();
         return roles;
     }
 
+    @Override
     @Transactional
     public Role find(String roleName) throws Exception{
         TypedQuery<Role> query=entityManager.createQuery("FROM Role r where r.roleName=:roleName",Role.class);
@@ -32,9 +34,21 @@ public class RoleRepository implements EntityRepository<Role> {
         Role role=query.getSingleResult();
         return role;
     }
+
+    @Override
     @Transactional
     public void add(Role role) throws Exception{
         entityManager.persist(role);
+    }
+
+    @Override
+    @Transactional
+    public Role delete(String roleName) throws Exception{
+        TypedQuery<Role> query=entityManager.createQuery("FROM Role r WHERE r.roleName=:roleName",Role.class);
+        query.setParameter("roleName",roleName);
+        Role role=query.getSingleResult();
+        entityManager.remove(role);
+        return role;
     }
 
     @Transactional
@@ -44,15 +58,6 @@ public class RoleRepository implements EntityRepository<Role> {
         Role role=query.getSingleResult();
         role.setRoleName(newRoleName);
         entityManager.merge(role);
-        return role;
-    }
-
-    @Transactional
-    public Role delete(String roleName) throws Exception{
-        TypedQuery<Role> query=entityManager.createQuery("FROM Role r WHERE r.roleName=:roleName",Role.class);
-        query.setParameter("roleName",roleName);
-        Role role=query.getSingleResult();
-        entityManager.remove(role);
         return role;
     }
 }
