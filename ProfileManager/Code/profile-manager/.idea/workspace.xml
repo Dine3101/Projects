@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="" />
+    <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/AppUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/MovieController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/TheatreController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/AppUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Theatre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/AppUser/UpdateAppUserRequestBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/Movie/UpdateMovieRequestBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/Theatre/UpdateTheatreRequestBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/response/ResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/AppUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/EntityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/MovieRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/TheatreRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/AppUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/MovieService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/TheatreService.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,19 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Application.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JAVA/GitHubWorkspace/Projects/ProfileManager/Code/profile-manager",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/GitHubWorkspace/Projects/ProfileManager/Code/profile-manager&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pjadm.project.profilemanager.Application" />
