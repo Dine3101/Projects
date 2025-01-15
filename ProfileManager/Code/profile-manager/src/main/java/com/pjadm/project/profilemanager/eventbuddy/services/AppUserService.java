@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** Service layer for AppUser Entity-related Business logic **/
+/** Service layer for AppUser Entity-related Business logic implementation **/
 @Service
 public class AppUserService {
 

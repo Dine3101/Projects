@@ -15,16 +15,19 @@ import java.util.List;
 
 /** Repository Layer for AppUser Entity-related DB queries **/
 @Repository
-public class AppUserRepository implements EntityRepository<AppUser>{
+public class AppUserRepository implements EntityRepository<AppUser,String>{
+
     @Autowired
     @Qualifier("EventBuddyEntityManagerFactory")
     private EntityManager entityManager;
 
+    @Override
     @Transactional
     public void add(AppUser appUser) throws Exception{
         entityManager.persist(appUser);
     }
 
+    @Override
     @Transactional
     public AppUser find(String emailId) throws Exception{
         TypedQuery<AppUser> query=entityManager.createQuery("FROM AppUser a WHERE a.emailId=:emailId",AppUser.class);
@@ -32,12 +35,14 @@ public class AppUserRepository implements EntityRepository<AppUser>{
         return query.getSingleResult();
     }
 
+    @Override
     @Transactional
     public List<AppUser> findAll(){
         List<AppUser> appUsers=entityManager.createQuery("FROM AppUser",AppUser.class).getResultList();
         return appUsers;
     }
 
+    @Override
     @Transactional
     public AppUser delete(String emailId){
         TypedQuery<AppUser> query=entityManager.createQuery("FROM AppUser a WHERE a.emailId=:emailId",AppUser.class);
