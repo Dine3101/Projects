@@ -25,7 +25,7 @@ public class AppUser {
     @Column(name="PHONE_NUMBER",nullable = false)
     private String phoneNumber;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ROLE_ID")
     private Role role;
 

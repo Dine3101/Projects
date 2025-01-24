@@ -24,7 +24,7 @@ public class Movie {
     @Column(name="THEME")
     private String theme;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="DISTRIBUTOR_ID",nullable = false)
     private AppUser distributor;
 

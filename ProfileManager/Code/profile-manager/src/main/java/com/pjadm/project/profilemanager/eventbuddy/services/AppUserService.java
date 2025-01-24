@@ -2,12 +2,11 @@ package com.pjadm.project.profilemanager.eventbuddy.services;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.AppUser;
 import com.pjadm.project.profilemanager.eventbuddy.entities.Role;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.AppUser.UpdateAppUserRequestBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.request.appuser.UpdateAppUserRequestBody;
 import com.pjadm.project.profilemanager.eventbuddy.models.response.ResponseBody;
 import com.pjadm.project.profilemanager.eventbuddy.repositories.AppUserRepository;
 import com.pjadm.project.profilemanager.eventbuddy.repositories.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

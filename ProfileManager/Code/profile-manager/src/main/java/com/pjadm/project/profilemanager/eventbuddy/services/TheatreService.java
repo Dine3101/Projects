@@ -1,7 +1,7 @@
 package com.pjadm.project.profilemanager.eventbuddy.services;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.Theatre;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.Theatre.UpdateTheatreRequestBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.request.theatre.UpdateTheatreRequestBody;
 import com.pjadm.project.profilemanager.eventbuddy.models.response.ResponseBody;
 import com.pjadm.project.profilemanager.eventbuddy.repositories.TheatreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** Service layer for Movie Entity-related Business logic implementation **/
+/** Service layer for Theatre Entity-related Business logic implementation **/
 @Service
 public class TheatreService {
     @Autowired

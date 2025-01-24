@@ -2,13 +2,11 @@ package com.pjadm.project.profilemanager.eventbuddy.repositories;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.AppUser;
 import com.pjadm.project.profilemanager.eventbuddy.entities.Role;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.AppUser.UpdateAppUserRequestBody;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

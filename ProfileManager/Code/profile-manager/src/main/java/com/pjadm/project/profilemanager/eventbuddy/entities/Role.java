@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 
-/** Entity class for Role table **/
+/** Entity class for ROLE table **/
 @Entity
 @Table(name="ROLE")
 @Data
@@ -17,7 +17,7 @@ import lombok.*;
 public class Role {
     @Id
     @Column(name="ROLE_ID")
-    int roleId;
+    Integer roleId;
     @Column(name="ROLE_NAME",nullable = false,unique = true)
     String roleName;
 

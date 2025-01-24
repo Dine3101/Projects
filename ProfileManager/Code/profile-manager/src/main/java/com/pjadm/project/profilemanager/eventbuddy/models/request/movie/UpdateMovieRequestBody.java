@@ -1,4 +1,4 @@
-package com.pjadm.project.profilemanager.eventbuddy.models.request.Movie;
+package com.pjadm.project.profilemanager.eventbuddy.models.request.movie;
 
 import com.pjadm.project.profilemanager.eventbuddy.entities.Movie;
 import lombok.AllArgsConstructor;

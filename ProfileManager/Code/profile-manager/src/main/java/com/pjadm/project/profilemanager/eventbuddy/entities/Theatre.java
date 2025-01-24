@@ -25,7 +25,7 @@ public class Theatre {
     @Column(name="LOCATION")
     private String location;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="OWNER_ID")
     private AppUser owner;
 

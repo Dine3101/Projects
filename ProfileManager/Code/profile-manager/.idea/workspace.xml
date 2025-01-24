@@ -5,30 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ecbf75f-f95a-4da3-8de4-a6fe69a8a0e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/configurations/EventBuddyDataSourceConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/AppUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/MovieController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/controllers/TheatreController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/AppUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Movie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/entities/Theatre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/AppUser/UpdateAppUserRequestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/Movie/UpdateMovieRequestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/Theatre/UpdateTheatreRequestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/models/response/ResponseBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/AppUserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/EntityRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/MovieRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/repositories/TheatreRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/AppUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/MovieService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pjadm/project/profilemanager/eventbuddy/services/TheatreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/AppUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/AppUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/TheatreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/controllers/TheatreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Theatre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/entities/Theatre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/AppUser/UpdateAppUserRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/appuser/UpdateAppUserRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/Movie/UpdateMovieRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/movie/UpdateMovieRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/Role/UpdateRoleRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/role/UpdateRoleRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/Theatre/UpdateTheatreRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/models/request/theatre/UpdateTheatreRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/AppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/TheatreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/repositories/TheatreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/AppUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/AppUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/TheatreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pjadm/project/profilemanager/eventbuddy/services/TheatreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DB_Schemas/EventBuddy/ddl_create_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../DB_Schemas/EventBuddy/ddl_create_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Design/Design_Document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Design/Design_Document.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Design/~$sign_Document.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.lang.reflect.Type;
 import java.util.List;
 
-/** Repository Layer for Movie Entity-related DB queries **/
+/** Repository Layer for Theatre Entity-related DB queries **/
 @Repository
 public class TheatreRepository implements EntityRepository<Theatre,Integer> {
 

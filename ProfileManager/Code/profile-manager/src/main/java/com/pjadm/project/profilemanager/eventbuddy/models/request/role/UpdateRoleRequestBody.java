@@ -1,9 +1,8 @@
-package com.pjadm.project.profilemanager.eventbuddy.models.request.Role;
+package com.pjadm.project.profilemanager.eventbuddy.models.request.role;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 

@@ -1,10 +1,7 @@
 package com.pjadm.project.profilemanager.eventbuddy.services;
 
-import com.pjadm.project.profilemanager.eventbuddy.entities.AppUser;
 import com.pjadm.project.profilemanager.eventbuddy.entities.Movie;
-import com.pjadm.project.profilemanager.eventbuddy.entities.Role;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.AppUser.UpdateAppUserRequestBody;
-import com.pjadm.project.profilemanager.eventbuddy.models.request.Movie.UpdateMovieRequestBody;
+import com.pjadm.project.profilemanager.eventbuddy.models.request.movie.UpdateMovieRequestBody;
 import com.pjadm.project.profilemanager.eventbuddy.models.response.ResponseBody;
 import com.pjadm.project.profilemanager.eventbuddy.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
