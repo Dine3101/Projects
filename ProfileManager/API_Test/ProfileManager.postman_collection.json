@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "4f561707-2ace-4048-9a9a-0dbbb9bcc05d",
+		"name": "ProfileManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40822457"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "AddRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\": 5,\r\n    \"roleName\": \"Test_Role\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/role"
+					},
+					"response": []
+				},
+				{
+					"name": "AddAppUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"Test_EmailId\",\r\n    \"name\":\"Test_User\",\r\n    \"phoneNumber\":\"0123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/appuser"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GetRoles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/role/all"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAppUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/appuser/all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "DeleteRole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/role/Test_Role"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PATCH",
+			"item": [
+				{
+					"name": "UpdateRoleName",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"purpose\":\"RoleName\",\r\n    \"roleName\":\"Test_Role\",\r\n    \"newRoleName\":\"Test_Role_Update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/role"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PATCH_ROLLBACK",
+			"item": [
+				{
+					"name": "UpdateRoleName",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"purpose\":\"RoleName\",\r\n    \"roleName\":\"Test_Role_Update\",\r\n    \"newRoleName\":\"Test_Role\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{security_protocol}}://{{ip}}:{{port}}/{{application}}/{{context}}/role"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "security_protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "ip",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8081",
+			"type": "string"
+		},
+		{
+			"key": "application",
+			"value": "ProfileManager",
+			"type": "string"
+		},
+		{
+			"key": "context",
+			"value": "eventbuddy",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "{{security_protocol}}://{{ip}}:{{port}}/{{app}}/",
+			"type": "string"
+		}
+	]
+}
