@@ -30,12 +30,12 @@ public class AppUserService {
     public List<AppUser> getAllAppUsers(){
         return appUserRepository.findAll();
     }
-    public ResponseBody<AppUser> getAppUser(AppUser appUser){
+    public ResponseBody<AppUser> getAppUser(String emailId){
         try{
-            appUser=appUserRepository.find(appUser.getEmailId());
+            appUser=appUserRepository.find(emailId);
             responseBody.setBody("SUCCESS","Successfully fetched AppUser",appUser);
         }catch (Exception e){
-            responseBody.setBody("FAILURE","Error while fetching AppUser..."+e.getMessage(),appUser);
+            responseBody.setBody("FAILURE","Error while fetching AppUser with emailId: "+emailId+". Error: "+e.getMessage(),appUser);
         }
         return responseBody;
     }
@@ -48,12 +48,12 @@ public class AppUserService {
         }
         return responseBody;
     }
-    public ResponseBody<AppUser> deleteAppUser(AppUser appUser){
+    public ResponseBody<AppUser> deleteAppUser(String emailId){
         try{
-            appUser=appUserRepository.delete(appUser.getEmailId());
+            appUser=appUserRepository.delete(emailId);
             responseBody.setBody("SUCCESS","Successfully deleted AppUser",appUser);
         }catch (Exception e){
-            responseBody.setBody("FAILURE","Error while deleting AppUser..."+e.getMessage(),appUser);
+            responseBody.setBody("FAILURE","Error while deleting AppUser with emailId: "+emailId+". Error: "+e.getMessage(),appUser);
         }
         return responseBody;
     }

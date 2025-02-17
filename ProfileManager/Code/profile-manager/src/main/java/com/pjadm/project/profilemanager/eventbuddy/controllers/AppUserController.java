@@ -22,9 +22,9 @@ public class AppUserController {
         return appUserService.getAllAppUsers();
     }
 
-    @GetMapping("")
-    public ResponseBody<AppUser> getAppUser(@RequestBody AppUser appUser){
-        return appUserService.getAppUser(appUser);
+    @GetMapping("/{email-id}")
+    public ResponseBody<AppUser> getAppUser(@PathVariable("email-id") String emailId){
+        return appUserService.getAppUser(emailId);
     }
 
     @PostMapping("")
@@ -32,9 +32,9 @@ public class AppUserController {
         return appUserService.addAppUser(appUser);
     }
 
-    @DeleteMapping("delete")
-    public ResponseBody<AppUser> deleteAppUser(@RequestBody AppUser appUser){
-        return appUserService.deleteAppUser(appUser);
+    @DeleteMapping("/{email-id}")
+    public ResponseBody<AppUser> deleteAppUser(@PathVariable("email-id") String emailId){
+        return appUserService.deleteAppUser(emailId);
     }
 
     @PatchMapping("")
